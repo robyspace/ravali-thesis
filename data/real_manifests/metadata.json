@@ -1,0 +1,214 @@
+{
+  "total": 24,
+  "by_type": {
+    "total": 24,
+    "customresourcedefinition": 4,
+    "serviceaccount": 4,
+    "alertmanager": 1,
+    "networkpolicy": 2,
+    "poddisruptionbudget": 1,
+    "prometheusrule": 1,
+    "secret": 3,
+    "service": 2,
+    "servicemonitor": 2,
+    "clusterrole": 1,
+    "clusterrolebinding": 1,
+    "configmap": 1,
+    "deployment": 1
+  },
+  "manifests": [
+    {
+      "file_name": "core-install-with-hydrator.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_0.yaml",
+      "source": "argoproj/argo-cd",
+      "kind": "customresourcedefinition",
+      "complexity": 122.5,
+      "priority": "high"
+    },
+    {
+      "file_name": "core-install.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_1.yaml",
+      "source": "argoproj/argo-cd",
+      "kind": "customresourcedefinition",
+      "complexity": 109.7,
+      "priority": "high"
+    },
+    {
+      "file_name": "install-with-hydrator.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_2.yaml",
+      "source": "argoproj/argo-cd",
+      "kind": "customresourcedefinition",
+      "complexity": 187.8,
+      "priority": "high"
+    },
+    {
+      "file_name": "install.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_3.yaml",
+      "source": "argoproj/argo-cd",
+      "kind": "customresourcedefinition",
+      "complexity": 175.0,
+      "priority": "high"
+    },
+    {
+      "file_name": "namespace-install-with-hydrator.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_0.yaml",
+      "source": "argoproj/argo-cd",
+      "kind": "serviceaccount",
+      "complexity": 146.7,
+      "priority": "high"
+    },
+    {
+      "file_name": "namespace-install.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_1.yaml",
+      "source": "argoproj/argo-cd",
+      "kind": "serviceaccount",
+      "complexity": 133.9,
+      "priority": "high"
+    },
+    {
+      "file_name": "alertmanager-alertmanager.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_0.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "alertmanager",
+      "complexity": 3.7,
+      "priority": "medium"
+    },
+    {
+      "file_name": "alertmanager-networkPolicy.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_0.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "networkpolicy",
+      "complexity": 3.4,
+      "priority": "medium"
+    },
+    {
+      "file_name": "alertmanager-podDisruptionBudget.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_0.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "poddisruptionbudget",
+      "complexity": 2.2,
+      "priority": "medium"
+    },
+    {
+      "file_name": "alertmanager-prometheusRule.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_0.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "prometheusrule",
+      "complexity": 3.1,
+      "priority": "medium"
+    },
+    {
+      "file_name": "alertmanager-secret.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_0.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "secret",
+      "complexity": 1.9,
+      "priority": "medium"
+    },
+    {
+      "file_name": "alertmanager-service.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/prometheus-operator_kube-prometheus_0.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "service",
+      "complexity": 2.2,
+      "priority": "medium"
+    },
+    {
+      "file_name": "alertmanager-serviceAccount.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_2.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "serviceaccount",
+      "complexity": 1.9,
+      "priority": "medium"
+    },
+    {
+      "file_name": "alertmanager-serviceMonitor.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_0.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "servicemonitor",
+      "complexity": 2.2,
+      "priority": "medium"
+    },
+    {
+      "file_name": "blackboxExporter-clusterRole.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_0.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "clusterrole",
+      "complexity": 2.7,
+      "priority": "medium"
+    },
+    {
+      "file_name": "blackboxExporter-clusterRoleBinding.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_0.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "clusterrolebinding",
+      "complexity": 1.9,
+      "priority": "medium"
+    },
+    {
+      "file_name": "blackboxExporter-configuration.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/configmaps/prometheus-operator_kube-prometheus_0.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "configmap",
+      "complexity": 1.9,
+      "priority": "medium"
+    },
+    {
+      "file_name": "blackboxExporter-deployment.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/deployments/prometheus-operator_kube-prometheus_0.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "deployment",
+      "complexity": 5.2,
+      "priority": "medium"
+    },
+    {
+      "file_name": "blackboxExporter-networkPolicy.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_1.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "networkpolicy",
+      "complexity": 3.4,
+      "priority": "medium"
+    },
+    {
+      "file_name": "blackboxExporter-service.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/prometheus-operator_kube-prometheus_1.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "service",
+      "complexity": 2.2,
+      "priority": "medium"
+    },
+    {
+      "file_name": "blackboxExporter-serviceAccount.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_3.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "serviceaccount",
+      "complexity": 1.9,
+      "priority": "medium"
+    },
+    {
+      "file_name": "blackboxExporter-serviceMonitor.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_1.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "servicemonitor",
+      "complexity": 2.5,
+      "priority": "medium"
+    },
+    {
+      "file_name": "grafana-config.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_1.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "secret",
+      "complexity": 1.9,
+      "priority": "medium"
+    },
+    {
+      "file_name": "grafana-dashboardDatasources.yaml",
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_2.yaml",
+      "source": "prometheus-operator/kube-prometheus",
+      "kind": "secret",
+      "complexity": 1.9,
+      "priority": "medium"
+    }
+  ],
+  "collection_date": "2025-10-22T14:16:01.614829"
+}

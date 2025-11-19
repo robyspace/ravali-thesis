@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-34
+    version: v2
+  name: app-34
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-34
+  template:
+    metadata:
+      labels:
+        app: app-34
+    spec:
+      containers:
+      - image: nginx:1.21
+        name: container-34
+        ports:
+        - containerPort: 5000

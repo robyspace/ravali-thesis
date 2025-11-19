@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-16
+    version: v2
+  name: app-16
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: app-16
+  template:
+    metadata:
+      labels:
+        app: app-16
+    spec:
+      containers:
+      - image: redis:6.2
+        name: container-16
+        ports:
+        - containerPort: 5000

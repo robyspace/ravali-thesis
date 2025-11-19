@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-7
+    version: v2
+  name: app-7
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-7
+  template:
+    metadata:
+      labels:
+        app: app-7
+    spec:
+      containers:
+      - image: nginx:latest
+        name: container-7
+        ports:
+        - containerPort: 3000

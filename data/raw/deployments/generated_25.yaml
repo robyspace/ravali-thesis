@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-25
+    version: v2
+  name: app-25
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-25
+  template:
+    metadata:
+      labels:
+        app: app-25
+    spec:
+      containers:
+      - image: postgres:13
+        name: container-25
+        ports:
+        - containerPort: 5000

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-11
+    version: v3
+  name: app-11
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-11
+  template:
+    metadata:
+      labels:
+        app: app-11
+    spec:
+      containers:
+      - image: postgres:13
+        name: container-11
+        ports:
+        - containerPort: 5000

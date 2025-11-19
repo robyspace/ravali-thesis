@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-9
+    version: v1
+  name: app-9
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-9
+  template:
+    metadata:
+      labels:
+        app: app-9
+    spec:
+      containers:
+      - image: postgres:13
+        name: container-9
+        ports:
+        - containerPort: 8080

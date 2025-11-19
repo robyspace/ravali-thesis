@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-27
+    version: v1
+  name: app-27
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-27
+  template:
+    metadata:
+      labels:
+        app: app-27
+    spec:
+      containers:
+      - image: mysql:8.0
+        name: container-27
+        ports:
+        - containerPort: 8080

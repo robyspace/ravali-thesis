@@ -1,0 +1,504 @@
+{
+  "evaluation_timestamp": "20251105_182544",
+  "model_path": "./final_model_v2",
+  "metrics": {
+    "codebleu_overall": 61.66464724296853,
+    "codebleu_components": {
+      "ngram_match": 40.17683631939144,
+      "weighted_ngram": 48.413820550903125,
+      "syntax_match": 73.02786657997645,
+      "dataflow_match": 53.7900655216031
+    },
+    "yaml_validity": 96.875,
+    "ccs_generated": 2.703125,
+    "ccs_reference": 4.4921875,
+    "ccs_difference": 1.7890625
+  },
+  "dataset_info": {
+    "training_samples": 252,
+    "validation_samples": 32,
+    "test_samples": 32
+  },
+  "individual_results": [
+    {
+      "sample_id": 0,
+      "intent": "Create a ConfigMap named blackbox-exporter-configuration with 1 configuration item with label app.kubernetes.io/component=exporter in monitoring namespace",
+      "reference": "apiVersion: v1\ndata:\n  config.yml: \"\\\"modules\\\":\\n  \\\"http_2xx\\\":\\n    \\\"http\\\":\\n      \\\"preferred_ip_protocol\\\"\\\n    : \\\"ip4\\\"\\n    \\\"prober\\\": \\\"http\\\"\\n  \\\"http_post_2xx\\\":\\n    \\\"http\\\":\\n   \\\n    \\   \\\"method\\\": \\\"POST\\\"\\n      \\\"preferred_ip_protocol\\\": \\\"ip4\\\"\\n    \\\"prober\\\"\\\n    : \\\"http\\\"\\n  \\\"irc_banner\\\":\\n    \\\"prober\\\": \\\"tcp\\\"\\n    \\\"tcp\\\":\\n      \\\"\\\n    preferred_ip_protocol\\\": \\\"ip4\\\"\\n      \\\"query_response\\\":\\n      - \\\"send\\\"\\\n    : \\\"NICK prober\\\"\\n      - \\\"send\\\": \\\"USER prober prober prober :prober\\\"\\n \\\n    \\     - \\\"expect\\\": \\\"PING :([^ ]+)\\\"\\n        \\\"send\\\": \\\"PONG ${1}\\\"\\n     \\\n    \\ - \\\"expect\\\": \\\"^:[^ ]+ 001\\\"\\n  \\\"pop3s_banner\\\":\\n    \\\"prober\\\": \\\"tcp\\\"\\n\\\n    \\    \\\"tcp\\\":\\n      \\\"preferred_ip_protocol\\\": \\\"ip4\\\"\\n      \\\"query_response\\\"\\\n    :\\n      - \\\"expect\\\": \\\"^+OK\\\"\\n      \\\"tls\\\": true\\n      \\\"tls_config\\\":\\n\\\n    \\        \\\"insecure_skip_verify\\\": false\\n  \\\"ssh_banner\\\":\\n    \\\"prober\\\": \\\"\\\n    tcp\\\"\\n    \\\"tcp\\\":\\n      \\\"preferred_ip_protocol\\\": \\\"ip4\\\"\\n      \\\"query_response\\\"\\\n    :\\n      - \\\"expect\\\": \\\"^SSH-2.0-\\\"\\n  \\\"tcp_connect\\\":\\n    \\\"prober\\\": \\\"tcp\\\"\\\n    \\n    \\\"tcp\\\":\\n      \\\"preferred_ip_protocol\\\": \\\"ip4\\\"\"\nkind: ConfigMap\nmetadata:\n  labels:\n    app.kubernetes.io/component: exporter\n    app.kubernetes.io/name: blackbox-exporter\n    app.kubernetes.io/part-of: kube-prometheus\n    app.kubernetes.io/version: 0.27.0\n  name: blackbox-exporter-configuration\n  namespace: monitoring\n",
+      "prediction": "apiVersion: v1\nautomountServiceAccountToken: true\nkind: ConfigMap\nmetadata:\n  labels:\n    app.kubernetes.io/component: exporter\n    app.kubernetes.io/instance: blackbox-exporter\n    app.kubernetes.io/name: blackbox-exporter\n    app.kubernetes.io/part-of: kube-prometheus\n    app.kubernetes.io/version: 1.14.0\n  name: blackbox-exporter-configuration\n  namespace: monitoring\n",
+      "codebleu_scores": {
+        "codebleu": 48.38093333281266,
+        "ngram_match": 0.8160001017653646,
+        "weighted_ngram": 9.374399896151944,
+        "syntax_match": 83.33333333333334,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.5,
+      "ccs_reference": 2.5
+    },
+    {
+      "sample_id": 1,
+      "intent": "Create a Namespace named ambient",
+      "reference": "apiVersion: v1\nkind: Namespace\nmetadata:\n  name: ambient\n",
+      "prediction": "apiVersion: v1\nkind: Namespace\nmetadata:\n  name: ambient\n  namespace: ambient\n",
+      "codebleu_scores": {
+        "codebleu": 91.22641130481,
+        "ngram_match": 72.59795291154771,
+        "weighted_ngram": 100.0,
+        "syntax_match": 92.3076923076923,
+        "dataflow_match": 0.0
+      },
+      "ccs_predicted": 1.85,
+      "ccs_reference": 1.8
+    },
+    {
+      "sample_id": 2,
+      "intent": "Create a Gateway named bookinfo-gateway",
+      "reference": "apiVersion: gateway.networking.k8s.io/v1\nkind: Gateway\nmetadata:\n  name: bookinfo-gateway\nspec:\n  gatewayClassName: istio\n  listeners:\n  - allowedRoutes:\n      namespaces:\n        from: Same\n    name: http\n    port: 80\n    protocol: HTTP\n",
+      "prediction": "apiVersion: gateway.k8s.io/v1\nkind: Gateway\nmetadata:\n  name: bookinfo-gateway\n",
+      "codebleu_scores": {
+        "codebleu": 43.618068472314455,
+        "ngram_match": 7.549005970567767,
+        "weighted_ngram": 16.92326791869004,
+        "syntax_match": 50.0,
+        "dataflow_match": 0.0
+      },
+      "ccs_predicted": 1.8,
+      "ccs_reference": 3.45
+    },
+    {
+      "sample_id": 3,
+      "intent": "Create a ServiceAccount named ingress-nginx with label app.kubernetes.io/component=controller in ingress-nginx namespace",
+      "reference": "apiVersion: v1\nautomountServiceAccountToken: true\nkind: ServiceAccount\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx\n  namespace: ingress-nginx\n",
+      "prediction": "apiVersion: v1\nautomountServiceAccountToken: true\nkind: ServiceAccount\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx\n  namespace: ingress-nginx\n",
+      "codebleu_scores": {
+        "codebleu": 100.0,
+        "ngram_match": 100.0,
+        "weighted_ngram": 100.0,
+        "syntax_match": 100.0,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.5,
+      "ccs_reference": 2.5
+    },
+    {
+      "sample_id": 4,
+      "intent": "Create a Alertmanager named main with label app.kubernetes.io/component=alert-router in monitoring namespace",
+      "reference": "apiVersion: monitoring.coreos.com/v1\nkind: Alertmanager\nmetadata:\n  labels:\n    app.kubernetes.io/component: alert-router\n    app.kubernetes.io/instance: main\n    app.kubernetes.io/name: alertmanager\n    app.kubernetes.io/part-of: kube-prometheus\n    app.kubernetes.io/version: 0.28.1\n  name: main\n  namespace: monitoring\nspec:\n  alertmanagerConfigSelector: {}\n  image: quay.io/prometheus/alertmanager:v0.28.1\n  nodeSelector:\n    kubernetes.io/os: linux\n  podMetadata:\n    labels:\n      app.kubernetes.io/component: alert-router\n      app.kubernetes.io/instance: main\n      app.kubernetes.io/name: alertmanager\n      app.kubernetes.io/part-of: kube-prometheus\n      app.kubernetes.io/version: 0.28.1\n  replicas: 3\n  resources:\n    limits:\n      cpu: 100m\n      memory: 100Mi\n    requests:\n      cpu: 4m\n      memory: 100Mi\n  secrets: []\n  securityContext:\n    fsGroup: 2000\n    runAsNonRoot: true\n    runAsUser: 1000\n  serviceAccountName: alertmanager-main\n  version: 0.28.1\n",
+      "prediction": "apiVersion: alertmanager.k8s.io/v1\nkind: Alertmanager\nmetadata:\n  labels:\n    app.kubernetes.io/component: alert-router\n    app.kubernetes.io/instance: main\n    app.kubernetes.io/name: main\n    app.kubernetes.io/part-of: monitoring\n    app.kubernetes.io/version: 1.14.0\n  name: main\n  namespace: monitoring\n",
+      "codebleu_scores": {
+        "codebleu": 29.120286599062428,
+        "ngram_match": 5.656424241571924,
+        "weighted_ngram": 16.15478137755804,
+        "syntax_match": 62.11180124223602,
+        "dataflow_match": 32.55813953488372
+      },
+      "ccs_predicted": 2.45,
+      "ccs_reference": 5.6
+    },
+    {
+      "sample_id": 5,
+      "intent": "Create a ClusterRoleBinding named blackbox-exporter with label app.kubernetes.io/component=exporter",
+      "reference": "apiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRoleBinding\nmetadata:\n  labels:\n    app.kubernetes.io/component: exporter\n    app.kubernetes.io/name: blackbox-exporter\n    app.kubernetes.io/part-of: kube-prometheus\n    app.kubernetes.io/version: 0.27.0\n  name: blackbox-exporter\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: ClusterRole\n  name: blackbox-exporter\nsubjects:\n- kind: ServiceAccount\n  name: blackbox-exporter\n  namespace: monitoring\n",
+      "prediction": "apiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRoleBinding\nmetadata:\n  labels:\n    app.kubernetes.io/component: exporter\n    app.kubernetes.io/instance: blackbox\n    app.kubernetes.io/name: blackbox-exporter\n    app.kubernetes.io/part-of: blackbox\n    app.kubernetes.io/version: 1.14.0\n  name: blackbox-exporter\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: ClusterRole\n  name: blackbox-exporter\nsubjects:\n- kind: ServiceAccount\n  name: blackbox-exporter\n",
+      "codebleu_scores": {
+        "codebleu": 86.02490977309958,
+        "ngram_match": 72.71648621286583,
+        "weighted_ngram": 72.71648621286583,
+        "syntax_match": 98.66666666666667,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.75,
+      "ccs_reference": 2.75
+    },
+    {
+      "sample_id": 6,
+      "intent": "Create a Service named tracing of type ClusterIP exposing port 80 targeting port 16686 for app jaeger in istio-system namespace",
+      "reference": "apiVersion: v1\nkind: Service\nmetadata:\n  labels:\n    app: jaeger\n  name: tracing\n  namespace: istio-system\nspec:\n  ports:\n  - name: http-query\n    port: 80\n    protocol: TCP\n    targetPort: 16686\n  - name: grpc-query\n    port: 16685\n    protocol: TCP\n    targetPort: 16685\n  selector:\n    app: jaeger\n  type: ClusterIP\n",
+      "prediction": "apiVersion: v1\nkind: Service\nmetadata:\n  name: tracing\n  namespace: istio-system\nspec:\n  ports:\n  - name: http\n    port: 80\n    targetPort: 16686\n  selector:\n    app: jaeger\n",
+      "codebleu_scores": {
+        "codebleu": 60.6974906567093,
+        "ngram_match": 28.863230706560415,
+        "weighted_ngram": 33.92673192027677,
+        "syntax_match": 80.0,
+        "dataflow_match": 0.0
+      },
+      "ccs_predicted": 2.8,
+      "ccs_reference": 3.2
+    },
+    {
+      "sample_id": 7,
+      "intent": "Create a Broker named default in knative-samples namespace",
+      "reference": "apiVersion: eventing.knative.dev/v1\nkind: Broker\nmetadata:\n  annotations:\n    eventing.knative.dev/broker.class: MTChannelBasedBroker\n  name: default\n  namespace: knative-samples\nspec: {}\n",
+      "prediction": "apiVersion: broker.knative.dev/v1\nkind: Broker\nmetadata:\n  labels:\n    app.kubernetes.io/instance: default\n    app.kubernetes.io/name: default\n    app.kubernetes.io/part-of: knative-samples\n    app.kubernetes.io/version: 1.14.0\n  name: default\n  namespace: knative-samples\n",
+      "codebleu_scores": {
+        "codebleu": 52.11372877576794,
+        "ngram_match": 20.10537345406003,
+        "weighted_ngram": 26.58483576665877,
+        "syntax_match": 61.76470588235294,
+        "dataflow_match": 0.0
+      },
+      "ccs_predicted": 2.4,
+      "ccs_reference": 2.3
+    },
+    {
+      "sample_id": 8,
+      "intent": "Create a ClusterRoleBinding named ingress-nginx with label app.kubernetes.io/instance=ingress-nginx",
+      "reference": "apiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRoleBinding\nmetadata:\n  labels:\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: ClusterRole\n  name: ingress-nginx\nsubjects:\n- kind: ServiceAccount\n  name: ingress-nginx\n  namespace: ingress-nginx\n",
+      "prediction": "apiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRoleBinding\nmetadata:\n  labels:\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: ClusterRole\n  name: ingress-nginx\n",
+      "codebleu_scores": {
+        "codebleu": 83.59156836623744,
+        "ngram_match": 70.62216866978063,
+        "weighted_ngram": 72.83501388607822,
+        "syntax_match": 90.9090909090909,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.55,
+      "ccs_reference": 2.75
+    },
+    {
+      "sample_id": 9,
+      "intent": "Create a Job named ingress-nginx-admission-patch with label app.kubernetes.io/component=admission-webhook in ingress-nginx namespace",
+      "reference": "apiVersion: batch/v1\nkind: Job\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission-patch\n  namespace: ingress-nginx\nspec:\n  template:\n    metadata:\n      labels:\n        app.kubernetes.io/component: admission-webhook\n        app.kubernetes.io/instance: ingress-nginx\n        app.kubernetes.io/name: ingress-nginx\n        app.kubernetes.io/part-of: ingress-nginx\n        app.kubernetes.io/version: 1.14.0\n      name: ingress-nginx-admission-patch\n    spec:\n      automountServiceAccountToken: true\n      containers:\n      - args:\n        - patch\n        - --webhook-name=ingress-nginx-admission\n        - --namespace=$(POD_NAMESPACE)\n        - --patch-mutating=false\n        - --secret-name=ingress-nginx-admission\n        - --patch-failure-policy=Fail\n        env:\n        - name: POD_NAMESPACE\n          valueFrom:\n            fieldRef:\n              fieldPath: metadata.namespace\n        image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.4@sha256:bcfc926ed57831edf102d62c5c0e259572591df4796ef1420b87f9cf6092497f\n        imagePullPolicy: IfNotPresent\n        name: patch\n        securityContext:\n          allowPrivilegeEscalation: false\n          capabilities:\n            drop:\n            - ALL\n          readOnlyRootFilesystem: true\n          runAsGroup: 65532\n          runAsNonRoot: true\n          runAsUser: 65532\n          seccompProfile:\n            type: RuntimeDefault\n      nodeSelector:\n        kubernetes.io/os: linux\n      restartPolicy: OnFailure\n      serviceAccountName: ingress-nginx-admission\n  ttlSecondsAfterFinished: 0\n",
+      "prediction": "apiVersion: batch/v1\nkind: Job\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission-patch\n  namespace: ingress-nginx\n",
+      "codebleu_scores": {
+        "codebleu": 26.1866883183336,
+        "ngram_match": 2.3517745856009107,
+        "weighted_ngram": 19.751300526813946,
+        "syntax_match": 53.333333333333336,
+        "dataflow_match": 29.310344827586203
+      },
+      "ccs_predicted": 2.45,
+      "ccs_reference": 8.2
+    },
+    {
+      "sample_id": 10,
+      "intent": "Create a Service named ingress-nginx-controller-admission of type ClusterIP exposing port 443 targeting port webhook with label app.kubernetes.io/component=controller in ingress-nginx namespace",
+      "reference": "apiVersion: v1\nkind: Service\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-controller-admission\n  namespace: ingress-nginx\nspec:\n  ports:\n  - appProtocol: https\n    name: https-webhook\n    port: 443\n    targetPort: webhook\n  selector:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n  type: ClusterIP\n",
+      "prediction": "apiVersion: v1\nkind: Service\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-controller-admission\n  namespace: ingress-nginx\nspec:\n  ports:\n  - appProtocol: https\n    targetPort: webhook\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n  type: ClusterIP\n",
+      "codebleu_scores": {
+        "codebleu": 87.11676850215295,
+        "ngram_match": 77.33091573318663,
+        "weighted_ngram": 77.32172528573446,
+        "syntax_match": 93.81443298969072,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 3.2,
+      "ccs_reference": 3.3
+    },
+    {
+      "sample_id": 11,
+      "intent": "Create a Service named blackbox-exporter of type ClusterIP exposing port 9115 targeting port https with label app.kubernetes.io/component=exporter in monitoring namespace",
+      "reference": "apiVersion: v1\nkind: Service\nmetadata:\n  labels:\n    app.kubernetes.io/component: exporter\n    app.kubernetes.io/name: blackbox-exporter\n    app.kubernetes.io/part-of: kube-prometheus\n    app.kubernetes.io/version: 0.27.0\n  name: blackbox-exporter\n  namespace: monitoring\nspec:\n  ports:\n  - name: https\n    port: 9115\n    targetPort: https\n  - name: probe\n    port: 19115\n    targetPort: http\n  selector:\n    app.kubernetes.io/component: exporter\n    app.kubernetes.io/name: blackbox-exporter\n    app.kubernetes.io/part-of: kube-prometheus\n",
+      "prediction": "apiVersion: v1\nkind: Service\nmetadata:\n  labels:\n    app.kubernetes.io/component: exporter\n    app.kubernetes.io/instance: blackbox-exporter\n    app.kubernetes.io/name: blackbox-exporter\n    app.kubernetes.io/part-of: kube-prometheus\n    app.kubernetes.io/version: 1.14.0\n  name: blackbox-exporter\n  namespace: monitoring\nspec:\n  ports:\n  - appProtocol: https\n    port: 9115\n  selector:\n    app.kubernetes.io/component: exporter\n    app.kubernetes.io/instance: blackbox-exporter\n    app.kubernetes.io/name: blackbox-exporter\n",
+      "codebleu_scores": {
+        "codebleu": 66.1994328505074,
+        "ngram_match": 45.470909705156735,
+        "weighted_ngram": 45.95685832690951,
+        "syntax_match": 96.7032967032967,
+        "dataflow_match": 76.66666666666667
+      },
+      "ccs_predicted": 3.15,
+      "ccs_reference": 3.3
+    },
+    {
+      "sample_id": 12,
+      "intent": "Create a Deployment named productpage-v1 with 1 replica using image docker.io/istio/examples-bookinfo-productpage-v1:1.18.0 exposed on container port 9080 for app productpage",
+      "reference": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: productpage\n    version: v1\n  name: productpage-v1\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: productpage\n      version: v1\n  template:\n    metadata:\n      annotations:\n        prometheus.io/path: /metrics\n        prometheus.io/port: '9080'\n        prometheus.io/scrape: 'true'\n      labels:\n        app: productpage\n        version: v1\n    spec:\n      containers:\n      - image: docker.io/istio/examples-bookinfo-productpage-v1:1.18.0\n        imagePullPolicy: IfNotPresent\n        name: productpage\n        ports:\n        - containerPort: 9080\n        volumeMounts:\n        - mountPath: /tmp\n          name: tmp\n      serviceAccountName: bookinfo-productpage\n      volumes:\n      - emptyDir: {}\n        name: tmp\n",
+      "prediction": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: productpage-v1\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: productpage\n      app: productpage\n  name: productpage-v1\n",
+      "codebleu_scores": {
+        "codebleu": 43.04999812968193,
+        "ngram_match": 6.078251481074938,
+        "weighted_ngram": 19.062917508241036,
+        "syntax_match": 47.05882352941176,
+        "dataflow_match": 0.0
+      },
+      "ccs_predicted": 2.7,
+      "ccs_reference": 6.5
+    },
+    {
+      "sample_id": 13,
+      "intent": "Create a Service named ingress-nginx-controller of type LoadBalancer exposing port 80 targeting port http with label app.kubernetes.io/component=controller in ingress-nginx namespace",
+      "reference": "apiVersion: v1\nkind: Service\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-controller\n  namespace: ingress-nginx\nspec:\n  ipFamilies:\n  - IPv4\n  ipFamilyPolicy: SingleStack\n  ports:\n  - appProtocol: http\n    name: http\n    port: 80\n    protocol: TCP\n    targetPort: http\n  - appProtocol: https\n    name: https\n    port: 443\n    protocol: TCP\n    targetPort: https\n  selector:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n  type: LoadBalancer\n",
+      "prediction": "apiVersion: v1\nkind: Service\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-controller\n  namespace: ingress-nginx\nspec:\n  ports:\n  - appProtocol: http\n    port: 80\n    targetPort: http\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n  selector:\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  type: LoadBalancer\n  selector:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n    app.kubernetes.io/version: 1.14.0\n  selector:\n    app.kubernetes.io/name: ingress-nginx-controller\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n    app.kubernetes.io/version: 1.14.0\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx\n",
+      "codebleu_scores": {
+        "codebleu": 72.80799803283813,
+        "ngram_match": 44.96838441276911,
+        "weighted_ngram": 52.930274385250065,
+        "syntax_match": 93.33333333333333,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 3.4,
+      "ccs_reference": 3.7
+    },
+    {
+      "sample_id": 14,
+      "intent": "Create a Deployment named retainkeys-demo with 1 replica using image nginx",
+      "reference": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: retainkeys-demo\nspec:\n  selector:\n    matchLabels:\n      app: nginx\n  strategy:\n    rollingUpdate:\n      maxSurge: 30%\n  template:\n    metadata:\n      labels:\n        app: nginx\n    spec:\n      containers:\n      - image: nginx\n        name: retainkeys-demo-ctr\n",
+      "prediction": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app.kubernetes.io/instance: retainkeys-demo\n    app.kubernetes.io/name: retainkeys-demo\n    app.kubernetes.io/part-of: retainkeys\n    app.kubernetes.io/version: 1.14.0\n  name: retainkeys-demo\n",
+      "codebleu_scores": {
+        "codebleu": 41.23928298567416,
+        "ngram_match": 13.46035776079724,
+        "weighted_ngram": 15.559274181899388,
+        "syntax_match": 35.9375,
+        "dataflow_match": 0.0
+      },
+      "ccs_predicted": 2.35,
+      "ccs_reference": 4.55
+    },
+    {
+      "sample_id": 15,
+      "intent": "Create a RoleBinding named ingress-nginx-admission with label app.kubernetes.io/component=admission-webhook in ingress-nginx namespace",
+      "reference": "apiVersion: rbac.authorization.k8s.io/v1\nkind: RoleBinding\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission\n  namespace: ingress-nginx\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: Role\n  name: ingress-nginx-admission\nsubjects:\n- kind: ServiceAccount\n  name: ingress-nginx-admission\n  namespace: ingress-nginx\n",
+      "prediction": "apiVersion: rbac.authorization.k8s.io/v1\nkind: RoleBinding\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: Role\n  name: ingress-nginx-admission\n",
+      "codebleu_scores": {
+        "codebleu": 78.91068338026376,
+        "ngram_match": 62.4981195621412,
+        "weighted_ngram": 65.36683618113611,
+        "syntax_match": 87.77777777777777,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.6,
+      "ccs_reference": 2.85
+    },
+    {
+      "sample_id": 16,
+      "intent": "Create a ServiceAccount named ingress-nginx with label app.kubernetes.io/component=controller in ingress-nginx namespace",
+      "reference": "apiVersion: v1\nautomountServiceAccountToken: true\nkind: ServiceAccount\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx\n  namespace: ingress-nginx\n",
+      "prediction": "apiVersion: v1\nautomountServiceAccountToken: true\nkind: ServiceAccount\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx\n  namespace: ingress-nginx\n",
+      "codebleu_scores": {
+        "codebleu": 100.0,
+        "ngram_match": 100.0,
+        "weighted_ngram": 100.0,
+        "syntax_match": 100.0,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.5,
+      "ccs_reference": 2.5
+    },
+    {
+      "sample_id": 17,
+      "intent": "Create a Job named ingress-nginx-admission-patch with label app.kubernetes.io/component=admission-webhook in ingress-nginx namespace",
+      "reference": "apiVersion: batch/v1\nkind: Job\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission-patch\n  namespace: ingress-nginx\nspec:\n  template:\n    metadata:\n      labels:\n        app.kubernetes.io/component: admission-webhook\n        app.kubernetes.io/instance: ingress-nginx\n        app.kubernetes.io/name: ingress-nginx\n        app.kubernetes.io/part-of: ingress-nginx\n        app.kubernetes.io/version: 1.14.0\n      name: ingress-nginx-admission-patch\n    spec:\n      automountServiceAccountToken: true\n      containers:\n      - args:\n        - patch\n        - --webhook-name=ingress-nginx-admission\n        - --namespace=$(POD_NAMESPACE)\n        - --patch-mutating=false\n        - --secret-name=ingress-nginx-admission\n        - --patch-failure-policy=Fail\n        env:\n        - name: POD_NAMESPACE\n          valueFrom:\n            fieldRef:\n              fieldPath: metadata.namespace\n        image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.4@sha256:bcfc926ed57831edf102d62c5c0e259572591df4796ef1420b87f9cf6092497f\n        imagePullPolicy: IfNotPresent\n        name: patch\n        securityContext:\n          allowPrivilegeEscalation: false\n          capabilities:\n            drop:\n            - ALL\n          readOnlyRootFilesystem: true\n          runAsGroup: 65532\n          runAsNonRoot: true\n          runAsUser: 65532\n          seccompProfile:\n            type: RuntimeDefault\n      nodeSelector:\n        kubernetes.io/os: linux\n      restartPolicy: OnFailure\n      serviceAccountName: ingress-nginx-admission\n  ttlSecondsAfterFinished: 0\n",
+      "prediction": "apiVersion: batch/v1\nkind: Job\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission-patch\n  namespace: ingress-nginx\n",
+      "codebleu_scores": {
+        "codebleu": 26.1866883183336,
+        "ngram_match": 2.3517745856009107,
+        "weighted_ngram": 19.751300526813946,
+        "syntax_match": 53.333333333333336,
+        "dataflow_match": 29.310344827586203
+      },
+      "ccs_predicted": 2.45,
+      "ccs_reference": 8.2
+    },
+    {
+      "sample_id": 18,
+      "intent": "Create a RoleBinding named ingress-nginx-admission with label app.kubernetes.io/component=admission-webhook in ingress-nginx namespace",
+      "reference": "apiVersion: rbac.authorization.k8s.io/v1\nkind: RoleBinding\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission\n  namespace: ingress-nginx\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: Role\n  name: ingress-nginx-admission\nsubjects:\n- kind: ServiceAccount\n  name: ingress-nginx-admission\n  namespace: ingress-nginx\n",
+      "prediction": "apiVersion: rbac.authorization.k8s.io/v1\nkind: RoleBinding\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: Role\n  name: ingress-nginx-admission\n",
+      "codebleu_scores": {
+        "codebleu": 78.91068338026376,
+        "ngram_match": 62.4981195621412,
+        "weighted_ngram": 65.36683618113611,
+        "syntax_match": 87.77777777777777,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.6,
+      "ccs_reference": 2.85
+    },
+    {
+      "sample_id": 19,
+      "intent": "Create a ValidatingWebhookConfiguration named ingress-nginx-admission with label app.kubernetes.io/component=admission-webhook",
+      "reference": "apiVersion: admissionregistration.k8s.io/v1\nkind: ValidatingWebhookConfiguration\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission\nwebhooks:\n- admissionReviewVersions:\n  - v1\n  clientConfig:\n    service:\n      name: ingress-nginx-controller-admission\n      namespace: ingress-nginx\n      path: /networking/v1/ingresses\n      port: 443\n  failurePolicy: Fail\n  matchPolicy: Equivalent\n  name: validate.nginx.ingress.kubernetes.io\n  rules:\n  - apiGroups:\n    - networking.k8s.io\n    apiVersions:\n    - v1\n    operations:\n    - CREATE\n    - UPDATE\n    resources:\n    - ingresses\n  sideEffects: None\n",
+      "prediction": "apiVersion: admissionregistration.k8s.io/v1\nkind: ValidatingWebhookConfiguration\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission\nrules:\n- apiGroups:\n  - admissionregistration.k8s.io\n  verbs:\n  - get\n  - update\n",
+      "codebleu_scores": {
+        "codebleu": 59.20442315682486,
+        "ngram_match": 25.85202957768626,
+        "weighted_ngram": 34.16566304961317,
+        "syntax_match": 76.8,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.85,
+      "ccs_reference": 4.65
+    },
+    {
+      "sample_id": 20,
+      "intent": "Create a Deployment named skywalking-oap with 1 replica using image apache/skywalking-oap-server:9.7.0 and 1 environment variable for app skywalking-oap in istio-system namespace",
+      "reference": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: skywalking-oap\n  name: skywalking-oap\n  namespace: istio-system\nspec:\n  selector:\n    matchLabels:\n      app: skywalking-oap\n  template:\n    metadata:\n      labels:\n        app: skywalking-oap\n        sidecar.istio.io/inject: 'false'\n    spec:\n      containers:\n      - env:\n        - name: SW_HEALTH_CHECKER\n          value: default\n        image: apache/skywalking-oap-server:9.7.0\n        name: skywalking-oap\n        readinessProbe:\n          exec:\n            command:\n            - /skywalking/bin/swctl\n            - health\n          initialDelaySeconds: 30\n          periodSeconds: 5\n",
+      "prediction": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: skywalking-oap\n    app.kubernetes.io/instance: skywalking-oap\n    app.kubernetes.io/name: skywalking-oap\n    app.kubernetes.io/part-of: skywalking-oap\n    app.kubernetes.io/version: 1.14.0\n  name: skywalking-oap\n  namespace: istio-system\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app.kubernetes.io/instance: skywalking-oap\n      app.kubernetes.io/name: skywalking-oap\n      app.kubernetes.io/part-of: skywalking-oap\n  template:\n    metadata:\n      labels:\n        app.kubernetes.io/version: 1.14.0\n        app.kubernetes.io/name: skywalking-oap\n        app.kubernetes.io/part-of: skywalking-oap\n        app.kubernetes.io/version: 1.14.0\n        app.kubernetes.io/name: skywalking-oap\n        app.kubernetes.io/part-of: skywalking-oap\n        app.kubernetes.io/version: 1.14.0\n        app.kubernetes.io/name: skywalking-oap\n        app.kubernetes.io/part-of: skywalking-oap\n        app.kubernetes.io/version: 1.14.0\n        name: skywalking-oap\n        env:\n        - name: skywalking-oap\n        - name: skywalking-oap\n        - name: skywalking-oap\n        - name: skywalking-oap\n        - name: skywalking-oap\n        - name: skywalking-oap\n          valueFrom:\n            fieldRef:\n              fieldPath: metadata.namespace\n          valueFrom:\n            fieldRef:\n              fieldPath: metadata.namespace\n          valueFrom:\n            fieldPath: metadata.name\n          valueFrom:\n            fieldRef:\n              field",
+      "codebleu_scores": {
+        "codebleu": 51.94602036030109,
+        "ngram_match": 16.951293627035078,
+        "weighted_ngram": 31.90421638559785,
+        "syntax_match": 58.92857142857143,
+        "dataflow_match": 0.0
+      },
+      "ccs_predicted": 5.1,
+      "ccs_reference": 5.9
+    },
+    {
+      "sample_id": 21,
+      "intent": "Create a IngressClass named nginx with label app.kubernetes.io/component=controller",
+      "reference": "apiVersion: networking.k8s.io/v1\nkind: IngressClass\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: nginx\nspec:\n  controller: k8s.io/ingress-nginx\n",
+      "prediction": "apiVersion: networking.k8s.io/v1\nkind: IngressClass\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: nginx\n",
+      "codebleu_scores": {
+        "codebleu": 88.85373531059223,
+        "ngram_match": 84.64817248906141,
+        "weighted_ngram": 84.55987220158339,
+        "syntax_match": 86.20689655172413,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.4,
+      "ccs_reference": 2.5
+    },
+    {
+      "sample_id": 22,
+      "intent": "Create a Service named ratings-v1 of type ClusterIP exposing port 9080",
+      "reference": "apiVersion: v1\nkind: Service\nmetadata:\n  name: ratings-v1\nspec:\n  ports:\n  - name: http\n    port: 9080\n  selector:\n    app: ratings\n    version: v1\n",
+      "prediction": "apiVersion: v1\nkind: Service\nmetadata:\n  name: ratings-v1\nspec:\n  ports:\n  - name: http\n    port: 9080\n  selector:\n    app: ratings\n    app: ratings\n  selector:\n    app: ratings\n    app: ratings\n  selector:\n    app: ratings\n    app: ratings\n  selector:\n      app: ratings\n  - name: ratings-v1\n  selector:\n      port: 9080\n  selector:\n      port: 9080\n  selector:\n      app: ratings\n  selector:\n      port: 9080\n  selector:\n      app: ratings\n  - name: ratings\n  - type: ClusterIP\n",
+      "codebleu_scores": {
+        "codebleu": 78.52893960525596,
+        "ngram_match": 28.372131444393244,
+        "weighted_ngram": 88.52140475440832,
+        "syntax_match": 97.22222222222221,
+        "dataflow_match": 0.0
+      },
+      "ccs_predicted": 1.0,
+      "ccs_reference": 2.75
+    },
+    {
+      "sample_id": 23,
+      "intent": "Create a CustomResourceDefinition named appprojects.argoproj.io with label app.kubernetes.io/name=appprojects.argoproj.io",
+      "reference": "apiVersion: apiextensions.k8s.io/v1\nkind: CustomResourceDefinition\nmetadata:\n  labels:\n    app.kubernetes.io/name: appprojects.argoproj.io\n    app.kubernetes.io/part-of: argocd\n  name: appprojects.argoproj.io\nspec:\n  group: argoproj.io\n  names:\n    kind: AppProject\n    listKind: AppProjectList\n    plural: appprojects\n    shortNames:\n    - appproj\n    - appprojs\n    singular: appproject\n  scope: Namespaced\n  versions:\n  - name: v1alpha1\n    schema:\n      openAPIV3Schema:\n        description: 'AppProject provides a logical grouping of applications, providing\n          controls for:\n\n          * where the apps may deploy to (cluster whitelist)\n\n          * what may be deployed (repository whitelist, resource whitelist/blacklist)\n\n          * who can access these applications (roles, OIDC group claims bindings)\n\n          * and what they can do (RBAC policies)\n\n          * automation access to these roles (JWT tokens)'\n        properties:\n          apiVersion:\n            description: 'APIVersion defines the versioned schema of this representation\n              of an object.\n\n              Servers should convert recognized schemas to the latest internal value,\n              and\n\n              may reject unrecognized values.\n\n              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'\n            type: string\n          kind:\n            description: 'Kind is a string value representing the REST resource this\n              object represents.\n\n              Servers may infer this from the endpoint the client submits requests\n              to.\n\n              Cannot be updated.\n\n              In CamelCase.\n\n              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'\n            type: string\n          metadata:\n            type: object\n          spec:\n            description: AppProjectSpec is the specification of an AppProject\n            properties:\n              clusterResourceBlacklist:\n                description: ClusterResourceBlacklist contains list of blacklisted\n                  cluster level resources\n                items:\n                  description: 'GroupKind specifies a Group and a Kind, but does not\n                    force a version.  This is useful for identifying\n\n                    concepts during lookup stages without having partially valid types'\n                  properties:\n                    group:\n                      type: string\n                    kind:\n                      type: string\n                  required:\n                  - group\n                  - kind\n                  type: object\n                type: array\n              clusterResourceWhitelist:\n                description: ClusterResourceWhitelist contains list of whitelisted\n                  cluster level resources\n                items:\n                  description: 'GroupKind specifies a Group and a Kind, but does not\n                    force a version.  This is useful for identifying\n\n                    concepts during lookup stages without having partially valid types'\n                  properties:\n                    group:\n                      type: string\n                    kind:\n                      type: string\n                  required:\n                  - group\n                  - kind\n                  type: object\n                type: array\n              description:\n                description: Description contains optional project description\n                maxLength: 255\n                type: string\n              destinationServiceAccounts:\n                description: DestinationServiceAccounts holds information about the\n                  service accounts to be impersonated for the application sync operation\n                  for each destination.\n                items:\n                  description: ApplicationDestinationServiceAccount holds information\n                    about the service account to be impersonated for the application\n                    sync operation.\n                  properties:\n                    defaultServiceAccount:\n                      description: DefaultServiceAccount to be used for impersonation\n                        during the sync operation\n                      type: string\n                    namespace:\n                      description: Namespace specifies the target namespace for the\n                        application's resources.\n                      type: string\n                    server:\n                      description: Server specifies the URL of the target cluster's\n                        Kubernetes control plane API.\n                      type: string\n                  required:\n                  - defaultServiceAccount\n                  - server\n                  type: object\n                type: array\n              destinations:\n                description: Destinations contains list of destinations available\n                  for deployment\n                items:\n                  description: ApplicationDestination holds information about the\n                    application's destination\n                  properties:\n                    name:\n                      description: Name is an alternate way of specifying the target\n                        cluster by its symbolic name. This must be set if Server is\n                        not set.\n                      type: string\n                    namespace:\n                      description: 'Namespace specifies the target namespace for the\n                        application''s resources.\n\n                        The namespace will only be set for namespace-scoped resources\n                        that have not set a value for .metadata.namespace'\n                      type: string\n                    server:\n                      description: Server specifies the URL of the target cluster's\n                        Kubernetes control plane API. This must be set if Name is\n                        not set.\n                      type: string\n                  type: object\n                type: array\n              namespaceResourceBlacklist:\n                description: NamespaceResourceBlacklist contains list of blacklisted\n                  namespace level resources\n                items:\n                  description: 'GroupKind specifies a Group and a Kind, but does not\n                    force a version.  This is useful for identifying\n\n                    concepts during lookup stages without having partially valid types'\n                  properties:\n                    group:\n                      type: string\n                    kind:\n                      type: string\n                  required:\n                  - group\n                  - kind\n                  type: object\n                type: array\n              namespaceResourceWhitelist:\n                description: NamespaceResourceWhitelist contains list of whitelisted\n                  namespace level resources\n                items:\n                  description: 'GroupKind specifies a Group and a Kind, but does not\n                    force a version.  This is useful for identifying\n\n                    concepts during lookup stages without having partially valid types'\n                  properties:\n                    group:\n                      type: string\n                    kind:\n                      type: string\n                  required:\n                  - group\n                  - kind\n                  type: object\n                type: array\n              orphanedResources:\n                description: OrphanedResources specifies if controller should monitor\n                  orphaned resources of apps in this project\n                properties:\n                  ignore:\n                    description: Ignore contains a list of resources that are to be\n                      excluded from orphaned resources monitoring\n                    items:\n                      description: OrphanedResourceKey is a reference to a resource\n                        to be ignored from\n                      properties:\n                        group:\n                          type: string\n                        kind:\n                          type: string\n                        name:\n                          type: string\n                      type: object\n                    type: array\n                  warn:\n                    description: Warn indicates if warning condition should be created\n                      for apps which have orphaned resources\n                    type: boolean\n                type: object\n              permitOnlyProjectScopedClusters:\n                description: PermitOnlyProjectScopedClusters determines whether destinations\n                  can only reference clusters which are project-scoped\n                type: boolean\n              roles:\n                description: Roles are user defined RBAC roles associated with this\n                  project\n                items:\n                  description: ProjectRole represents a role that has access to a\n                    project\n                  properties:\n                    description:\n                      description: Description is a description of the role\n                      type: string\n                    groups:\n                      description: Groups are a list of OIDC group claims bound to\n                        this role\n                      items:\n                        type: string\n                      type: array\n                    jwtTokens:\n                      description: JWTTokens are a list of generated JWT tokens bound\n                        to this role\n                      items:\n                        description: JWTToken holds the issuedAt and expiresAt values\n                          of a token\n                        properties:\n                          exp:\n                            format: int64\n                            type: integer\n                          iat:\n                            format: int64\n                            type: integer\n                          id:\n                            type: string\n                        required:\n                        - iat\n                        type: object\n                      type: array\n                    name:\n                      description: Name is a name for this role\n                      type: string\n                    policies:\n                      description: Policies Stores a list of casbin formatted strings\n                        that define access policies for the role in the project\n                      items:\n                        type: string\n                      type: array\n                  required:\n                  - name\n                  type: object\n                type: array\n              signatureKeys:\n                description: SignatureKeys contains a list of PGP key IDs that commits\n                  in Git must be signed with in order to be allowed for sync\n                items:\n                  description: SignatureKey is the specification of a key required\n                    to verify commit signatures with\n                  properties:\n                    keyID:\n                      description: The ID of the key in hexadecimal notation\n                      type: string\n                  required:\n                  - keyID\n                  type: object\n                type: array\n              sourceNamespaces:\n                description: SourceNamespaces defines the namespaces application resources\n                  are allowed to be created in\n                items:\n                  type: string\n                type: array\n              sourceRepos:\n                description: SourceRepos contains list of repository URLs which can\n                  be used for deployment\n                items:\n                  type: string\n                type: array\n              syncWindows:\n                description: SyncWindows controls when syncs can be run for apps in\n                  this project\n                items:\n                  description: SyncWindow contains the kind, time, duration and attributes\n                    that are used to assign the syncWindows to apps\n                  properties:\n                    andOperator:\n                      description: UseAndOperator use AND operator for matching applications,\n                        namespaces and clusters instead of the default OR operator\n                      type: boolean\n                    applications:\n                      description: Applications contains a list of applications that\n                        the window will apply to\n                      items:\n                        type: string\n                      type: array\n                    clusters:\n                      description: Clusters contains a list of clusters that the window\n                        will apply to\n                      items:\n                        type: string\n                      type: array\n                    description:\n                      description: Description of the sync that will be applied to\n                        the schedule, can be used to add any information such as a\n                        ticket number for example\n                      type: string\n                    duration:\n                      description: Duration is the amount of time the sync window\n                        will be open\n                      type: string\n                    kind:\n                      description: Kind defines if the window allows or blocks syncs\n                      type: string\n                    manualSync:\n                      description: ManualSync enables manual syncs when they would\n                        otherwise be blocked\n                      type: boolean\n                    namespaces:\n                      description: Namespaces contains a list of namespaces that the\n                        window will apply to\n                      items:\n                        type: string\n                      type: array\n                    schedule:\n                      description: Schedule is the time the window will begin, specified\n                        in cron format\n                      type: string\n                    timeZone:\n                      description: TimeZone of the sync that will be applied to the\n                        schedule\n                      type: string\n                  type: object\n                type: array\n            type: object\n          status:\n            description: AppProjectStatus contains status information for AppProject\n              CRs\n            properties:\n              jwtTokensByRole:\n                additionalProperties:\n                  description: JWTTokens represents a list of JWT tokens\n                  properties:\n                    items:\n                      items:\n                        description: JWTToken holds the issuedAt and expiresAt values\n                          of a token\n                        properties:\n                          exp:\n                            format: int64\n                            type: integer\n                          iat:\n                            format: int64\n                            type: integer\n                          id:\n                            type: string\n                        required:\n                        - iat\n                        type: object\n                      type: array\n                  type: object\n                description: JWTTokensByRole contains a list of JWT tokens issued\n                  for a given role\n                type: object\n            type: object\n        required:\n        - metadata\n        - spec\n        type: object\n    served: true\n    storage: true\n",
+      "prediction": "apiVersion: apiextensions.k8s.io/v1\nkind: CustomResourceDefinition\nmetadata:\n  labels:\n    app.kubernetes.io/component: appprojects\n    app.kubernetes.io/name: appprojects.argoproj.io\n    app.kubernetes.io/part-of: argoproj.io\n  name: appprojects.argoproj.io\nspec:\n  group: argoproj.io\n  names:\n    - appprojects.argoproj.io\n  versions:\n  - additionalPrinterColumns:\n    - jsonPath: .status.conditions[?(@.type == \"Ready\")].status\n      name: Ready\n      priority: 1\n      type: string\n    - jsonPath: .status.conditions[?(@.type == \"Ready\")].status\n      name: Ready\n      priority: 1\n      type: string\n    - jsonPath: .status.conditions[?(@.type == \"Ready\")].status\n      name: Status\n      priority: 1\n      type: string\n    - jsonPath: .status.conditions[?(@.type == \"Ready\")].status\n      name: Ready\n      priority: 1\n      type: string\n    - jsonPath: .status.conditions[?(@.type == \"Ready\")].status\n      name: Ready\n      priority: 1\n      type: string\n    - jsonPath: .status.conditions[?(@.type == \"Ready\")].status\n      name: Status\n      type: string\n    - jsonPath: .status.conditions[?(@.type == \"Ready\")].status\n      name: Status\n      priority: 1\n      type: string\n    - jsonPath: .status.conditions[?(@.type == \"Ready\")].status\n      name: Status\n      priority: 1\n      type: string\n    - jsonPath: .status.conditions[?(@.type == \"Ready\")].status\n      name: Status\n      type: string\n    - jsonPath: .status.conditions[?(@.status.conditions[?(@.type == \"Ready\")].status\n      name: Status\n      type: string\n    - jsonPath: .status.conditions[?(@.conditions[?(@.type == \"Ready\")].status\n     ",
+      "codebleu_scores": {
+        "codebleu": 11.571359392532,
+        "ngram_match": 0.002665950295380734,
+        "weighted_ngram": 1.2244208018240925,
+        "syntax_match": 38.789237668161434,
+        "dataflow_match": 6.269113149847094
+      },
+      "ccs_predicted": 5.35,
+      "ccs_reference": 20.1
+    },
+    {
+      "sample_id": 24,
+      "intent": "Create a ServiceAccount named ingress-nginx with label app.kubernetes.io/component=controller in ingress-nginx namespace",
+      "reference": "apiVersion: v1\nautomountServiceAccountToken: true\nkind: ServiceAccount\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx\n  namespace: ingress-nginx\n",
+      "prediction": "apiVersion: v1\nautomountServiceAccountToken: true\nkind: ServiceAccount\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx\n  namespace: ingress-nginx\n",
+      "codebleu_scores": {
+        "codebleu": 100.0,
+        "ngram_match": 100.0,
+        "weighted_ngram": 100.0,
+        "syntax_match": 100.0,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.5,
+      "ccs_reference": 2.5
+    },
+    {
+      "sample_id": 25,
+      "intent": "Create a Service named helloworld-python of type ClusterIP exposing port 80 targeting port 8080 in knative-samples namespace",
+      "reference": "apiVersion: v1\nkind: Service\nmetadata:\n  name: helloworld-python\n  namespace: knative-samples\nspec:\n  ports:\n  - port: 80\n    protocol: TCP\n    targetPort: 8080\n  selector:\n    app: helloworld-python\n",
+      "prediction": "apiVersion: v1\nkind: Service\nmetadata:\n  name: helloworld-python\n  namespace: knative-samples\nspec:\n  ports:\n  - name: http\n    port: 80\n    targetPort: 8080\n  selector:\n    app: helloworld-python\n",
+      "codebleu_scores": {
+        "codebleu": 82.81715794228464,
+        "ngram_match": 74.17090125042293,
+        "weighted_ngram": 74.17090125042293,
+        "syntax_match": 82.92682926829268,
+        "dataflow_match": 0.0
+      },
+      "ccs_predicted": 2.8,
+      "ccs_reference": 2.8
+    },
+    {
+      "sample_id": 26,
+      "intent": "Create a Job named ingress-nginx-admission-patch with label app.kubernetes.io/component=admission-webhook in ingress-nginx namespace",
+      "reference": "apiVersion: batch/v1\nkind: Job\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission-patch\n  namespace: ingress-nginx\nspec:\n  template:\n    metadata:\n      labels:\n        app.kubernetes.io/component: admission-webhook\n        app.kubernetes.io/instance: ingress-nginx\n        app.kubernetes.io/name: ingress-nginx\n        app.kubernetes.io/part-of: ingress-nginx\n        app.kubernetes.io/version: 1.14.0\n      name: ingress-nginx-admission-patch\n    spec:\n      automountServiceAccountToken: true\n      containers:\n      - args:\n        - patch\n        - --webhook-name=ingress-nginx-admission\n        - --namespace=$(POD_NAMESPACE)\n        - --patch-mutating=false\n        - --secret-name=ingress-nginx-admission\n        - --patch-failure-policy=Fail\n        env:\n        - name: POD_NAMESPACE\n          valueFrom:\n            fieldRef:\n              fieldPath: metadata.namespace\n        image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.4@sha256:bcfc926ed57831edf102d62c5c0e259572591df4796ef1420b87f9cf6092497f\n        imagePullPolicy: IfNotPresent\n        name: patch\n        securityContext:\n          allowPrivilegeEscalation: false\n          capabilities:\n            drop:\n            - ALL\n          readOnlyRootFilesystem: true\n          runAsGroup: 65532\n          runAsNonRoot: true\n          runAsUser: 65532\n          seccompProfile:\n            type: RuntimeDefault\n      nodeSelector:\n        kubernetes.io/os: linux\n      restartPolicy: OnFailure\n      serviceAccountName: ingress-nginx-admission\n  ttlSecondsAfterFinished: 0\n",
+      "prediction": "apiVersion: batch/v1\nkind: Job\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission-patch\n  namespace: ingress-nginx\n",
+      "codebleu_scores": {
+        "codebleu": 26.1866883183336,
+        "ngram_match": 2.3517745856009107,
+        "weighted_ngram": 19.751300526813946,
+        "syntax_match": 53.333333333333336,
+        "dataflow_match": 29.310344827586203
+      },
+      "ccs_predicted": 2.45,
+      "ccs_reference": 8.2
+    },
+    {
+      "sample_id": 27,
+      "intent": "Create a ConfigMap named loki-runtime with 1 configuration item with label helm.sh/chart=loki-6.43.0 in istio-system namespace",
+      "reference": "apiVersion: v1\ndata:\n  runtime-config.yaml: '{}\n\n    '\nkind: ConfigMap\nmetadata:\n  labels:\n    app.kubernetes.io/instance: loki\n    app.kubernetes.io/name: loki\n    app.kubernetes.io/version: 3.5.5\n    helm.sh/chart: loki-6.43.0\n  name: loki-runtime\n  namespace: istio-system\n",
+      "prediction": "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  labels:\n    helm.sh/chart: loki-6.43.0\n    helm.sh/chart: loki-6.43.0\n  name: loki-runtime\nspec:\n  group: istio-system\n  versions:\n  - name: loki-runtime\n  namespace: istio-system\nspec:\n  group: istio-system\n  versions:\n  - name: loki-runtime\n",
+      "codebleu_scores": {
+        "codebleu": 50.74321344093102,
+        "ngram_match": 25.079292295301137,
+        "weighted_ngram": 32.439016013877506,
+        "syntax_match": 45.45454545454545,
+        "dataflow_match": 0.0
+      },
+      "ccs_predicted": 2.7,
+      "ccs_reference": 2.5
+    },
+    {
+      "sample_id": 28,
+      "intent": "Create a Role named ingress-nginx-admission with label app.kubernetes.io/component=admission-webhook in ingress-nginx namespace",
+      "reference": "apiVersion: rbac.authorization.k8s.io/v1\nkind: Role\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission\n  namespace: ingress-nginx\nrules:\n- apiGroups:\n  - ''\n  resources:\n  - secrets\n  verbs:\n  - get\n  - create\n",
+      "prediction": "apiVersion: rbac.authorization.k8s.io/v1\nkind: Role\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission\n  namespace: ingress-nginx\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: Role\n  name: ingress-nginx-admission\n  namespace: ingress-nginx\n",
+      "codebleu_scores": {
+        "codebleu": 72.7225705077586,
+        "ngram_match": 58.54641181950957,
+        "weighted_ngram": 58.659659685209064,
+        "syntax_match": 73.68421052631578,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.7,
+      "ccs_reference": 3.45
+    },
+    {
+      "sample_id": 29,
+      "intent": "Create a Deployment named jaeger with 1 replica using image docker.io/jaegertracing/all-in-one:1.70.0 with resource limits and 7 environment variables for app jaeger in istio-system namespace",
+      "reference": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: jaeger\n  name: jaeger\n  namespace: istio-system\nspec:\n  selector:\n    matchLabels:\n      app: jaeger\n  template:\n    metadata:\n      annotations:\n        prometheus.io/port: '14269'\n        prometheus.io/scrape: 'true'\n      labels:\n        app: jaeger\n        sidecar.istio.io/inject: 'false'\n    spec:\n      containers:\n      - env:\n        - name: BADGER_EPHEMERAL\n          value: 'false'\n        - name: SPAN_STORAGE_TYPE\n          value: badger\n        - name: BADGER_DIRECTORY_VALUE\n          value: /badger/data\n        - name: BADGER_DIRECTORY_KEY\n          value: /badger/key\n        - name: COLLECTOR_ZIPKIN_HOST_PORT\n          value: :9411\n        - name: MEMORY_MAX_TRACES\n          value: '50000'\n        - name: QUERY_BASE_PATH\n          value: /jaeger\n        image: docker.io/jaegertracing/all-in-one:1.70.0\n        livenessProbe:\n          httpGet:\n            path: /\n            port: 14269\n        name: jaeger\n        readinessProbe:\n          httpGet:\n            path: /\n            port: 14269\n        resources:\n          requests:\n            cpu: 10m\n        volumeMounts:\n        - mountPath: /badger\n          name: data\n      volumes:\n      - emptyDir: {}\n        name: data\n",
+      "prediction": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: jaeger\n    app.kubernetes.io/instance: jaeger\n    app.kubernetes.io/name: jaeger\n    app.kubernetes.io/part-of: jaeger\n    app.kubernetes.io/version: 1.70.0\n  name: jaeger\n",
+      "codebleu_scores": {
+        "codebleu": 30.266286626592066,
+        "ngram_match": 0.47709277712799414,
+        "weighted_ngram": 7.5880537292402765,
+        "syntax_match": 38.0,
+        "dataflow_match": 75.0
+      },
+      "ccs_predicted": 2.4,
+      "ccs_reference": 7.95
+    },
+    {
+      "sample_id": 30,
+      "intent": "Create a Role named ingress-nginx with label app.kubernetes.io/component=controller in ingress-nginx namespace",
+      "reference": "apiVersion: rbac.authorization.k8s.io/v1\nkind: Role\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx\n  namespace: ingress-nginx\nrules:\n- apiGroups:\n  - ''\n  resources:\n  - namespaces\n  verbs:\n  - get\n- apiGroups:\n  - ''\n  resources:\n  - configmaps\n  - pods\n  - secrets\n  - endpoints\n  verbs:\n  - get\n  - list\n  - watch\n- apiGroups:\n  - ''\n  resources:\n  - services\n  verbs:\n  - get\n  - list\n  - watch\n- apiGroups:\n  - networking.k8s.io\n  resources:\n  - ingresses\n  verbs:\n  - get\n  - list\n  - watch\n- apiGroups:\n  - networking.k8s.io\n  resources:\n  - ingresses/status\n  verbs:\n  - update\n- apiGroups:\n  - networking.k8s.io\n  resources:\n  - ingressclasses\n  verbs:\n  - get\n  - list\n  - watch\n- apiGroups:\n  - coordination.k8s.io\n  resourceNames:\n  - ingress-nginx-leader\n  resources:\n  - leases\n  verbs:\n  - get\n  - update\n- apiGroups:\n  - coordination.k8s.io\n  resources:\n  - leases\n  verbs:\n  - create\n- apiGroups:\n  - ''\n  resources:\n  - events\n  verbs:\n  - create\n  - patch\n- apiGroups:\n  - discovery.k8s.io\n  resources:\n  - endpointslices\n  verbs:\n  - list\n  - watch\n  - get\n",
+      "prediction": "apiVersion: rbac.authorization.k8s.io/v1\nkind: Role\nmetadata:\n  labels:\n    app.kubernetes.io/component: controller\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx\n  namespace: ingress-nginx\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: Role\n  name: ingress-nginx\n",
+      "codebleu_scores": {
+        "codebleu": 20.86784013615838,
+        "ngram_match": 0.6568430395345283,
+        "weighted_ngram": 12.109273382133361,
+        "syntax_match": 27.848101265822784,
+        "dataflow_match": 42.857142857142854
+      },
+      "ccs_predicted": 2.65,
+      "ccs_reference": 4.85
+    },
+    {
+      "sample_id": 31,
+      "intent": "Create a ClusterRoleBinding named ingress-nginx-admission with label app.kubernetes.io/component=admission-webhook",
+      "reference": "apiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRoleBinding\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: ClusterRole\n  name: ingress-nginx-admission\nsubjects:\n- kind: ServiceAccount\n  name: ingress-nginx-admission\n  namespace: ingress-nginx\n",
+      "prediction": "apiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRoleBinding\nmetadata:\n  labels:\n    app.kubernetes.io/component: admission-webhook\n    app.kubernetes.io/instance: ingress-nginx\n    app.kubernetes.io/name: ingress-nginx\n    app.kubernetes.io/part-of: ingress-nginx\n    app.kubernetes.io/version: 1.14.0\n  name: ingress-nginx-admission\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: ClusterRole\n  name: ingress-nginx-admission\n",
+      "codebleu_scores": {
+        "codebleu": 84.17885579856534,
+        "ngram_match": 72.61490370736908,
+        "weighted_ngram": 74.56563576596203,
+        "syntax_match": 89.53488372093024,
+        "dataflow_match": 100.0
+      },
+      "ccs_predicted": 2.6,
+      "ccs_reference": 2.8
+    }
+  ]
+}

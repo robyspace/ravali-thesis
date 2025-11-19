@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-38
+    version: v3
+  name: app-38
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-38
+  template:
+    metadata:
+      labels:
+        app: app-38
+    spec:
+      containers:
+      - image: nginx:latest
+        name: container-38
+        ports:
+        - containerPort: 80

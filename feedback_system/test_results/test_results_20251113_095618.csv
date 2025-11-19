@@ -1,0 +1,491 @@
+test_number,test_name,complexity,intent,valid_yaml,bp_score,quality_score,passed_checks,total_checks,production_ready,deployment_ready,readiness_tier,num_issues,critical_issues,high_issues,medium_issues,expected_bp_min,meets_expectation,generated_yaml
+1,Simple Nginx Deployment,SIMPLE,Create a deployment for nginx with 3 replicas,True,81.82,58.77,9,11,False,True,DEPLOYMENT READY,2,0,0,2,20,True,"apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+"
+2,Basic Service,SIMPLE,Create a service to expose nginx on port 80,True,81.82,57.27,9,11,False,True,DEPLOYMENT READY,2,0,0,2,30,True,"apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  ports:
+  - name: http
+    port: 80
+  selector:
+    app: nginx
+"
+3,Simple Pod,SIMPLE,Create a pod running redis,True,27.27,24.19,3,11,False,False,NEEDS WORK,8,1,4,3,20,True,"apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: redis
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+      - args:
+        - /usr/local/bin/redis
+        - --pod-name=redis
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: TARGET
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: TARGET
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: TARGET
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: TARGET
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: TARGET
+          valueFrom:
+            fieldRef:
+              fieldPath"
+4,Nginx with Resources,MEDIUM,"Deploy nginx with 3 replicas, 200m CPU and 256Mi memory limits",False,0.0,0.0,0,11,False,False,INVALID,0,0,0,0,40,False,"apiVersion: serving.k8s.io/v1
+kind: RollingUpdate
+  name: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - args:
+        - /usr/local/bin/nginx
+        - /usr/local/bin/nginx
+        - /usr/local/bin/nginx
+        - /usr/local/bin/nginx
+        - /usr/local/bin/nginx
+        - /usr/local/bin/nginx
+        - /usr/local/bin/nginx
+        - /usr/local/bin/nginx
+        - args:
+        - /usr/local/bin/nginx
+        - /usr/local/bin/nginx
+        - /usr/local/bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin/nginx-bin-c"
+5,Database Deployment,MEDIUM,Deploy postgres database with persistent storage and resource limits,True,81.82,57.27,9,11,False,True,DEPLOYMENT READY,2,0,0,2,35,True,"apiVersion: postgresql.authorization.k8s.io/v1
+kind: Postgres
+metadata:
+  name: postgres
+  namespace: default
+spec:
+  persistentStorage: 'true'
+  resources:
+  - path: /var/log/postgres
+    path: /var/log/postgres
+    path: /var/log/postgres
+    path: /var/log/postgres
+    path: /var/log/postgres
+    path: /var/log/postgres
+    path: /var/log/postgres
+    name: postgres
+"
+6,Application with Probes,MEDIUM,Deploy nodejs app with health checks on port 3000,True,81.82,57.27,9,11,False,True,DEPLOYMENT READY,2,0,0,2,45,True,"apiVersion: apps/v1
+kind: Application
+metadata:
+  labels:
+    app.kubernetes.io/instance: nodejs
+    app.kubernetes.io/name: nodejs
+    app.kubernetes.io/part-of: nodejs
+    app.kubernetes.io/version: v3.7.3
+    helm.sh/chart: nodejs-server-2.7.3
+    helm.sh/chart: nodejs-server-2.7.3.3
+  name: nodejs
+  namespace: default
+spec:
+  ports:
+  - name: http
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app.kubernetes.io/instance: nodejs
+"
+7,ConfigMap Deployment,MEDIUM,Deploy app with ConfigMap for configuration,True,27.27,23.29,3,11,False,False,NEEDS WORK,8,1,4,3,35,False,"apiVersion: apps/v1
+kind: Application
+metadata:
+  name: app
+spec:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: app
+        app.kubernetes.io/name: app
+        app.kubernetes.io/part-of: app
+    app.kubernetes.io/version: v2.18.0
+    helm.sh/chart: v2.18.0
+    spec:
+      app.kubernetes.io/version: v2.18.0
+    spec:
+      automountServiceAccountToken: true
+      containers:
+      - args:
+        - --deploy-service=$(POD_NAMESPACE)/app
+        - --configmap=$(POD_NAMESPACE)/config.yaml
+        env:
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath"
+8,Production Nginx,COMPLEX,"Deploy production-ready nginx with health checks, resource limits, and security context",True,81.82,57.27,9,11,False,True,DEPLOYMENT READY,2,0,0,2,60,True,"apiVersion: serving.k8s.io/v1
+kind: ProductionReady
+metadata:
+  name: production-ready-nginx
+spec:
+  group: nginx
+  names:
+    kind: ProductionReady
+    plural: nginx
+    shortNames:
+    - nginx
+    singular: nginx
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        properties:
+          openAPIV3Schema:
+            properties:
+          healthCheck:
+            properties:
+            type: string
+          status:
+            type: object
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+          status:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+          status:
+            type: object
+          status:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+          status:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+          status:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+          status:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+          status:
+            type: object
+            x-kubernetes-map-type: atomic
+            x-kubernetes-preserve-unknown-fields: true
+"
+9,Secure Database,COMPLEX,"Deploy secure postgres with non-root user, resource limits, and health checks",False,0.0,0.0,0,11,False,False,INVALID,0,0,0,0,65,False,"apiVersion: postgresql.authorization.k8s.io/v1
+kind: Postgres
+metadata:
+  name: secure_postgres
+  namespace: default
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - args:
+        - /usr/local/bin/postgres
+        - /usr/local/bin/k8s.io/postgres
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.username
+        - name: USER
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.creationTimestamp
+        name: Age
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.creationTimestamp
+        name: Age
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.creationTimestamp
+        name: Age
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.creationTimestamp
+        name: Age
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.creationTimestamp
+        name: Age
+          valueFrom:
+            fieldRef:
+              fieldPath"
+10,Complete Web Application,COMPLEX,"Deploy web application with health checks, proper labels, resource limits, running as non-root with dropped capabilities",False,0.0,0.0,0,11,False,False,INVALID,0,0,0,0,70,False,"apiVersion: apps/v1
+kind: Application
+metadata:
+  labels:
+    app.kubernetes.io/instance: web-application
+    app.kubernetes.io/name: web-application
+    app.kubernetes.io/version: v2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    version: v2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    helm.sh/chart: web-application-2.18.0
+    version: v2.18.0
+    helm.sh/chart: v2.18.0
+  name: v2.18.0
+    version: v2.18.0
+    helm.sh/chart: v2.18.0
+    name: v2.18.0
+    version: v2.18.0
+    version: v2.18.0
+    helm.18.0
+    version: v2.18.0
+  name: v2"
+11,Microservice with Service Mesh,COMPLEX,"Deploy microservice with istio sidecar, security policies, and monitoring",False,0.0,0.0,0,11,False,False,INVALID,0,0,0,0,50,False,"apiVersion: monitoring.coreos.com/v1
+kind: Microservice
+metadata:
+  name: microservice
+spec:
+  group: istio-sidecar
+  policies:
+  - monitoring
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ''
+  resources:
+  - events
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - coordination.k8s.io
+  resources:
+  - monitoring
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ''
+  resources:
+  - services
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ''
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - monitoring
+  resources:
+  - events
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - events
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - events
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - discovery.k8s.io
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+- apiGroups:
+  - discovery.k8s.io
+  resources:
+  - monitoring.k8s.io
+  resources:
+  - endpointslices
+  verbs:
+  - get
+"
+12,StatefulSet Application,COMPLEX,Create StatefulSet for distributed database cluster,True,81.82,57.27,9,11,False,True,DEPLOYMENT READY,2,0,0,2,40,True,"apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app.kubernetes.io/instance: distributed-database
+    app.kubernetes.io/name: distributed-database
+    app.kubernetes.io/version: v2.18.0
+    helm.sh/chart: distributed-database-2.18.0
+    helm.sh/chart: distributed-database-2.18.0
+    helm.sh/chart: distributed-database-2.18.0
+    version: v2.18.0
+  name: distributed-database
+"
+13,Batch Job,MEDIUM,Create a job for data processing with completion and parallelism,False,0.0,0.0,0,11,False,False,INVALID,0,0,0,0,35,False,"apiVersion: batch/v1
+kind: Job
+metadata:
+  name: data-processing
+spec:
+  parallelism: 1
+  selector:
+    matchLabels:
+      app: data
+  template:
+    metadata:
+      labels:
+        app: data
+    spec:
+      containers:
+      - args:
+        - /usr/local/bin/data-processing
+        env:
+        - name: TARGET
+          value: v1alpha1
+        value: v1alpha1
+        image: registry.k8s.io/k8s.io
+        imagePullPolicy: IfNotPresent
+        name: DATA
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        imagePullPolicy: IfNotPresent
+        - name: TARGET
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: TARGET
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: TARGET
+          valueFrom:
+            fieldRef:
+              fieldPath"
+14,CronJob for Backup,MEDIUM,Create CronJob to backup database every night,True,18.18,16.03,2,11,False,False,NEEDS WORK,9,1,4,4,30,False,"apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-database
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+      - env:
+        - name: TARGET
+          value: v1alpha1
+        image: docker.io/{username}/backup-database
+"
+15,DaemonSet for Monitoring,MEDIUM,Deploy monitoring agent as DaemonSet on all nodes,False,0.0,0.0,0,11,False,False,INVALID,0,0,0,0,40,False,"apiVersion: monitoring.coreos.com/v1
+kind: DaemonSet
+metadata:
+  name: monitoring-agent
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: monitoring
+  template:
+    metadata:
+      labels:
+        app: monitoring-agent
+    spec:
+      containers:
+      - env:
+        - name: POD_NAME
+          value: v1alpha1
+        imagePullPolicy: IfNotPresent
+        imagePullPolicy: IfNotPresent
+        imagePullPolicy: IfNotPresent
+        name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        image: registry.k8s.io/k8s.io/monitoring-agent
+        imagePullPolicy: IfNotPresent
+        name: monitoring-agent-daemon
+"

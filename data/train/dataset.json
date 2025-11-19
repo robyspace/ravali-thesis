@@ -1,0 +1,440 @@
+[
+  {
+    "intent": "Create an Ingress named ingress-7",
+    "yaml": "apiVersion: networking.k8s.io/v1\nkind: Ingress\nmetadata:\n  name: ingress-7\nspec:\n  rules:\n  - host: app-7.example.com\n    http:\n      paths:\n      - backend:\n          service:\n            name: service-7\n            port:\n              number: 80\n        path: /\n        pathType: Prefix\n",
+    "complexity_score": 3.28,
+    "resource_type": "Ingress"
+  },
+  {
+    "intent": "Create a ConfigMap named config-3",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\n  key-1: value-1\n  key-2: value-2\n  key-3: value-3\n  key-4: value-4\nkind: ConfigMap\nmetadata:\n  name: config-3\n",
+    "complexity_score": 0.85,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Set up app-24 deployment running 1 pods",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-24\n    version: v1\n  name: app-24\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: app-24\n  template:\n    metadata:\n      labels:\n        app: app-24\n    spec:\n      containers:\n      - image: mysql:8.0\n        name: container-24\n        ports:\n        - containerPort: 80\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Create a ConfigMap named config-4",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\n  key-1: value-1\n  key-2: value-2\n  key-3: value-3\n  key-4: value-4\nkind: ConfigMap\nmetadata:\n  name: config-4\n",
+    "complexity_score": 0.85,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Deploy app-2 application with 3 instances",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-2\n    version: v3\n  name: app-2\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: app-2\n  template:\n    metadata:\n      labels:\n        app: app-2\n    spec:\n      containers:\n      - image: redis:6.2\n        name: container-2\n        ports:\n        - containerPort: 3000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Create LoadBalancer service service-18 on port 3000",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-18\nspec:\n  ports:\n  - port: 3000\n    targetPort: 3000\n  selector:\n    app: app-18\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Create a LoadBalancer service named service-12",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-12\nspec:\n  ports:\n  - port: 8080\n    targetPort: 80\n  selector:\n    app: app-12\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Deploy app-37 using httpd:2.4 image with 3 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-37\n    version: v2\n  name: app-37\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: app-37\n  template:\n    metadata:\n      labels:\n        app: app-37\n    spec:\n      containers:\n      - image: httpd:2.4\n        name: container-37\n        ports:\n        - containerPort: 8080\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Create a Kubernetes deployment named app-32 with 3 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-32\n    version: v3\n  name: app-32\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: app-32\n  template:\n    metadata:\n      labels:\n        app: app-32\n    spec:\n      containers:\n      - image: httpd:2.4\n        name: container-32\n        ports:\n        - containerPort: 5000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Set up app-12 deployment running 2 pods",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-12\n    version: v1\n  name: app-12\nspec:\n  replicas: 2\n  selector:\n    matchLabels:\n      app: app-12\n  template:\n    metadata:\n      labels:\n        app: app-12\n    spec:\n      containers:\n      - image: mysql:8.0\n        name: container-12\n        ports:\n        - containerPort: 3000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Set up service-22 service with type LoadBalancer",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-22\nspec:\n  ports:\n  - port: 8080\n    targetPort: 8080\n  selector:\n    app: app-22\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Deploy app-31 using httpd:2.4 image with 5 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-31\n    version: v2\n  name: app-31\nspec:\n  replicas: 5\n  selector:\n    matchLabels:\n      app: app-31\n  template:\n    metadata:\n      labels:\n        app: app-31\n    spec:\n      containers:\n      - image: httpd:2.4\n        name: container-31\n        ports:\n        - containerPort: 8080\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Deploy app-5 application with 5 instances",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-5\n    version: v3\n  name: app-5\nspec:\n  replicas: 5\n  selector:\n    matchLabels:\n      app: app-5\n  template:\n    metadata:\n      labels:\n        app: app-5\n    spec:\n      containers:\n      - image: httpd:2.4\n        name: container-5\n        ports:\n        - containerPort: 8080\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Set up my-nginx service with type ClusterIP",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  labels:\n    run: my-nginx\n  name: my-nginx\nspec:\n  ports:\n  - port: 80\n    protocol: TCP\n  selector:\n    run: my-nginx\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Create LoadBalancer service service-24 on port 80",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-24\nspec:\n  ports:\n  - port: 80\n    targetPort: 80\n  selector:\n    app: app-24\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Create LoadBalancer service service-25 on port 3000",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-25\nspec:\n  ports:\n  - port: 3000\n    targetPort: 80\n  selector:\n    app: app-25\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Deploy app-25 application with 2 instances",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-25\n    version: v2\n  name: app-25\nspec:\n  replicas: 2\n  selector:\n    matchLabels:\n      app: app-25\n  template:\n    metadata:\n      labels:\n        app: app-25\n    spec:\n      containers:\n      - image: postgres:13\n        name: container-25\n        ports:\n        - containerPort: 5000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Create a Kubernetes deployment named app-16 with 5 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-16\n    version: v2\n  name: app-16\nspec:\n  replicas: 5\n  selector:\n    matchLabels:\n      app: app-16\n  template:\n    metadata:\n      labels:\n        app: app-16\n    spec:\n      containers:\n      - image: redis:6.2\n        name: container-16\n        ports:\n        - containerPort: 5000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Create ConfigMap config-9 with keys: key-0, key-1, key-2",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\n  key-1: value-1\n  key-2: value-2\n  key-3: value-3\nkind: ConfigMap\nmetadata:\n  name: config-9\n",
+    "complexity_score": 0.85,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Set up app-21 deployment running 2 pods",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-21\n    version: v1\n  name: app-21\nspec:\n  replicas: 2\n  selector:\n    matchLabels:\n      app: app-21\n  template:\n    metadata:\n      labels:\n        app: app-21\n    spec:\n      containers:\n      - image: httpd:2.4\n        name: container-21\n        ports:\n        - containerPort: 3000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Create NodePort service service-29 on port 80",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-29\nspec:\n  ports:\n  - port: 80\n    targetPort: 8080\n  selector:\n    app: app-29\n  type: NodePort\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Expose service-5 as a LoadBalancer service",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-5\nspec:\n  ports:\n  - port: 8080\n    targetPort: 8080\n  selector:\n    app: app-5\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Set up app-10 deployment running 1 pods",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-10\n    version: v2\n  name: app-10\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: app-10\n  template:\n    metadata:\n      labels:\n        app: app-10\n    spec:\n      containers:\n      - image: redis:6.2\n        name: container-10\n        ports:\n        - containerPort: 5000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Deploy app-22 using mysql:8.0 image with 3 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-22\n    version: v2\n  name: app-22\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: app-22\n  template:\n    metadata:\n      labels:\n        app: app-22\n    spec:\n      containers:\n      - image: mysql:8.0\n        name: container-22\n        ports:\n        - containerPort: 8080\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Deploy app-0 using httpd:2.4 image with 5 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-0\n    version: v1\n  name: app-0\nspec:\n  replicas: 5\n  selector:\n    matchLabels:\n      app: app-0\n  template:\n    metadata:\n      labels:\n        app: app-0\n    spec:\n      containers:\n      - image: httpd:2.4\n        name: container-0\n        ports:\n        - containerPort: 3000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Create a Kubernetes deployment named app-14 with 2 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-14\n    version: v3\n  name: app-14\nspec:\n  replicas: 2\n  selector:\n    matchLabels:\n      app: app-14\n  template:\n    metadata:\n      labels:\n        app: app-14\n    spec:\n      containers:\n      - image: mysql:8.0\n        name: container-14\n        ports:\n        - containerPort: 80\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Deploy app-35 using nginx:1.21 image with 3 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-35\n    version: v3\n  name: app-35\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: app-35\n  template:\n    metadata:\n      labels:\n        app: app-35\n    spec:\n      containers:\n      - image: nginx:1.21\n        name: container-35\n        ports:\n        - containerPort: 8080\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Deploy app-6 using nginx:1.21 image with 3 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-6\n    version: v1\n  name: app-6\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: app-6\n  template:\n    metadata:\n      labels:\n        app: app-6\n    spec:\n      containers:\n      - image: nginx:1.21\n        name: container-6\n        ports:\n        - containerPort: 80\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Set up configuration map config-5",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\nkind: ConfigMap\nmetadata:\n  name: config-5\n",
+    "complexity_score": 0.83,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Create a Kubernetes deployment named app-3 with 5 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-3\n    version: v1\n  name: app-3\nspec:\n  replicas: 5\n  selector:\n    matchLabels:\n      app: app-3\n  template:\n    metadata:\n      labels:\n        app: app-3\n    spec:\n      containers:\n      - image: postgres:13\n        name: container-3\n        ports:\n        - containerPort: 8080\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Create a LoadBalancer service named service-23",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-23\nspec:\n  ports:\n  - port: 3000\n    targetPort: 8080\n  selector:\n    app: app-23\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Deploy app-34 application with 2 instances",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-34\n    version: v2\n  name: app-34\nspec:\n  replicas: 2\n  selector:\n    matchLabels:\n      app: app-34\n  template:\n    metadata:\n      labels:\n        app: app-34\n    spec:\n      containers:\n      - image: nginx:1.21\n        name: container-34\n        ports:\n        - containerPort: 5000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Set up configuration map config-17",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\n  key-1: value-1\n  key-2: value-2\nkind: ConfigMap\nmetadata:\n  name: config-17\n",
+    "complexity_score": 0.84,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Set up configuration map config-8",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\n  key-1: value-1\n  key-2: value-2\n  key-3: value-3\n  key-4: value-4\nkind: ConfigMap\nmetadata:\n  name: config-8\n",
+    "complexity_score": 0.85,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Set up service-11 service with type ClusterIP",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-11\nspec:\n  ports:\n  - port: 3000\n    targetPort: 8080\n  selector:\n    app: app-11\n  type: ClusterIP\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Expose service-6 as a LoadBalancer service",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-6\nspec:\n  ports:\n  - port: 8080\n    targetPort: 3000\n  selector:\n    app: app-6\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Create ClusterIP service service-26 on port 80",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-26\nspec:\n  ports:\n  - port: 80\n    targetPort: 80\n  selector:\n    app: app-26\n  type: ClusterIP\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Create LoadBalancer service service-2 on port 8080",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-2\nspec:\n  ports:\n  - port: 8080\n    targetPort: 3000\n  selector:\n    app: app-2\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Create an Ingress named ingress-6",
+    "yaml": "apiVersion: networking.k8s.io/v1\nkind: Ingress\nmetadata:\n  name: ingress-6\nspec:\n  rules:\n  - host: app-6.example.com\n    http:\n      paths:\n      - backend:\n          service:\n            name: service-6\n            port:\n              number: 80\n        path: /\n        pathType: Prefix\n",
+    "complexity_score": 3.28,
+    "resource_type": "Ingress"
+  },
+  {
+    "intent": "Set up service-16 service with type ClusterIP",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-16\nspec:\n  ports:\n  - port: 80\n    targetPort: 8080\n  selector:\n    app: app-16\n  type: ClusterIP\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Create an Ingress named ingress-5",
+    "yaml": "apiVersion: networking.k8s.io/v1\nkind: Ingress\nmetadata:\n  name: ingress-5\nspec:\n  rules:\n  - host: app-5.example.com\n    http:\n      paths:\n      - backend:\n          service:\n            name: service-5\n            port:\n              number: 80\n        path: /\n        pathType: Prefix\n",
+    "complexity_score": 3.28,
+    "resource_type": "Ingress"
+  },
+  {
+    "intent": "Create Ingress ingress-2 for host app-2.example.com",
+    "yaml": "apiVersion: networking.k8s.io/v1\nkind: Ingress\nmetadata:\n  name: ingress-2\nspec:\n  rules:\n  - host: app-2.example.com\n    http:\n      paths:\n      - backend:\n          service:\n            name: service-2\n            port:\n              number: 80\n        path: /\n        pathType: Prefix\n",
+    "complexity_score": 3.28,
+    "resource_type": "Ingress"
+  },
+  {
+    "intent": "Create a Kubernetes deployment named app-38 with 2 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-38\n    version: v3\n  name: app-38\nspec:\n  replicas: 2\n  selector:\n    matchLabels:\n      app: app-38\n  template:\n    metadata:\n      labels:\n        app: app-38\n    spec:\n      containers:\n      - image: nginx:latest\n        name: container-38\n        ports:\n        - containerPort: 80\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Set up service-15 service with type NodePort",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-15\nspec:\n  ports:\n  - port: 8080\n    targetPort: 80\n  selector:\n    app: app-15\n  type: NodePort\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Set up service-4 service with type LoadBalancer",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-4\nspec:\n  ports:\n  - port: 8080\n    targetPort: 8080\n  selector:\n    app: app-4\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Create ConfigMap config-15 with keys: key-0, key-1, key-2",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\n  key-1: value-1\n  key-2: value-2\nkind: ConfigMap\nmetadata:\n  name: config-15\n",
+    "complexity_score": 0.84,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Create LoadBalancer service service-13 on port 80",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-13\nspec:\n  ports:\n  - port: 80\n    targetPort: 3000\n  selector:\n    app: app-13\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Set up configuration map config-0",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\n  key-1: value-1\n  key-2: value-2\nkind: ConfigMap\nmetadata:\n  name: config-0\n",
+    "complexity_score": 0.84,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Deploy app-29 application with 1 instances",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-29\n    version: v3\n  name: app-29\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: app-29\n  template:\n    metadata:\n      labels:\n        app: app-29\n    spec:\n      containers:\n      - image: redis:6.2\n        name: container-29\n        ports:\n        - containerPort: 3000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Set up ingress controller ingress-3",
+    "yaml": "apiVersion: networking.k8s.io/v1\nkind: Ingress\nmetadata:\n  name: ingress-3\nspec:\n  rules:\n  - host: app-3.example.com\n    http:\n      paths:\n      - backend:\n          service:\n            name: service-3\n            port:\n              number: 80\n        path: /\n        pathType: Prefix\n",
+    "complexity_score": 3.28,
+    "resource_type": "Ingress"
+  },
+  {
+    "intent": "Set up service-14 service with type ClusterIP",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-14\nspec:\n  ports:\n  - port: 80\n    targetPort: 3000\n  selector:\n    app: app-14\n  type: ClusterIP\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Set up service-19 service with type NodePort",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-19\nspec:\n  ports:\n  - port: 80\n    targetPort: 8080\n  selector:\n    app: app-19\n  type: NodePort\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Create ConfigMap config-13 with keys: key-0, key-1, key-2",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\n  key-1: value-1\n  key-2: value-2\n  key-3: value-3\nkind: ConfigMap\nmetadata:\n  name: config-13\n",
+    "complexity_score": 0.85,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Deploy app-33 using postgres:13 image with 5 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-33\n    version: v1\n  name: app-33\nspec:\n  replicas: 5\n  selector:\n    matchLabels:\n      app: app-33\n  template:\n    metadata:\n      labels:\n        app: app-33\n    spec:\n      containers:\n      - image: postgres:13\n        name: container-33\n        ports:\n        - containerPort: 5000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Deploy app-26 application with 1 instances",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-26\n    version: v3\n  name: app-26\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: app-26\n  template:\n    metadata:\n      labels:\n        app: app-26\n    spec:\n      containers:\n      - image: redis:6.2\n        name: container-26\n        ports:\n        - containerPort: 8080\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Set up configuration map config-16",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\nkind: ConfigMap\nmetadata:\n  name: config-16\n",
+    "complexity_score": 0.83,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Set up nginx-deployment deployment running 4 pods",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: nginx-deployment\nspec:\n  replicas: 4\n  selector:\n    matchLabels:\n      app: nginx\n  template:\n    metadata:\n      labels:\n        app: nginx\n    spec:\n      containers:\n      - image: nginx:1.16.1\n        name: nginx\n        ports:\n        - containerPort: 80\n",
+    "complexity_score": 2.88,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Expose service-8 as a LoadBalancer service",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-8\nspec:\n  ports:\n  - port: 80\n    targetPort: 8080\n  selector:\n    app: app-8\n  type: LoadBalancer\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Set up app-19 deployment running 3 pods",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-19\n    version: v2\n  name: app-19\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: app-19\n  template:\n    metadata:\n      labels:\n        app: app-19\n    spec:\n      containers:\n      - image: httpd:2.4\n        name: container-19\n        ports:\n        - containerPort: 5000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Deploy nginx-deployment application with 3 instances",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: nginx\n  name: nginx-deployment\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: nginx\n  template:\n    metadata:\n      labels:\n        app: nginx\n    spec:\n      containers:\n      - image: nginx:1.14.2\n        name: nginx\n        ports:\n        - containerPort: 80\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Deploy app-20 application with 3 instances",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-20\n    version: v3\n  name: app-20\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: app-20\n  template:\n    metadata:\n      labels:\n        app: app-20\n    spec:\n      containers:\n      - image: nginx:latest\n        name: container-20\n        ports:\n        - containerPort: 3000\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Create ConfigMap config-11 with keys: key-0, key-1",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\n  key-1: value-1\nkind: ConfigMap\nmetadata:\n  name: config-11\n",
+    "complexity_score": 0.84,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Create Ingress ingress-0 for host app-0.example.com",
+    "yaml": "apiVersion: networking.k8s.io/v1\nkind: Ingress\nmetadata:\n  name: ingress-0\nspec:\n  rules:\n  - host: app-0.example.com\n    http:\n      paths:\n      - backend:\n          service:\n            name: service-0\n            port:\n              number: 80\n        path: /\n        pathType: Prefix\n",
+    "complexity_score": 3.28,
+    "resource_type": "Ingress"
+  },
+  {
+    "intent": "Set up configuration map special-config",
+    "yaml": "apiVersion: v1\ndata:\n  SPECIAL_LEVEL: very\n  SPECIAL_TYPE: charm\nkind: ConfigMap\nmetadata:\n  name: special-config\n  namespace: default\n",
+    "complexity_score": 0.84,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Create ConfigMap config-12 with keys: key-0",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\nkind: ConfigMap\nmetadata:\n  name: config-12\n",
+    "complexity_score": 0.83,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Create a ConfigMap named config-7",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\n  key-1: value-1\n  key-2: value-2\n  key-3: value-3\n  key-4: value-4\nkind: ConfigMap\nmetadata:\n  name: config-7\n",
+    "complexity_score": 0.85,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Set up app-17 deployment running 1 pods",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-17\n    version: v3\n  name: app-17\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: app-17\n  template:\n    metadata:\n      labels:\n        app: app-17\n    spec:\n      containers:\n      - image: postgres:13\n        name: container-17\n        ports:\n        - containerPort: 80\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Create NodePort service service-17 on port 80",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-17\nspec:\n  ports:\n  - port: 80\n    targetPort: 3000\n  selector:\n    app: app-17\n  type: NodePort\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Set up service-27 service with type NodePort",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-27\nspec:\n  ports:\n  - port: 3000\n    targetPort: 80\n  selector:\n    app: app-27\n  type: NodePort\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Deploy app-13 using postgres:13 image with 2 replicas",
+    "yaml": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  labels:\n    app: app-13\n    version: v2\n  name: app-13\nspec:\n  replicas: 2\n  selector:\n    matchLabels:\n      app: app-13\n  template:\n    metadata:\n      labels:\n        app: app-13\n    spec:\n      containers:\n      - image: postgres:13\n        name: container-13\n        ports:\n        - containerPort: 80\n",
+    "complexity_score": 2.89,
+    "resource_type": "Deployment"
+  },
+  {
+    "intent": "Create a ConfigMap named config-18",
+    "yaml": "apiVersion: v1\ndata:\n  key-0: value-0\n  key-1: value-1\nkind: ConfigMap\nmetadata:\n  name: config-18\n",
+    "complexity_score": 0.84,
+    "resource_type": "ConfigMap"
+  },
+  {
+    "intent": "Create ClusterIP service service-7 on port 8080",
+    "yaml": "apiVersion: v1\nkind: Service\nmetadata:\n  name: service-7\nspec:\n  ports:\n  - port: 8080\n    targetPort: 8080\n  selector:\n    app: app-7\n  type: ClusterIP\n",
+    "complexity_score": 1.46,
+    "resource_type": "Service"
+  },
+  {
+    "intent": "Create an Ingress named ingress-8",
+    "yaml": "apiVersion: networking.k8s.io/v1\nkind: Ingress\nmetadata:\n  name: ingress-8\nspec:\n  rules:\n  - host: app-8.example.com\n    http:\n      paths:\n      - backend:\n          service:\n            name: service-8\n            port:\n              number: 80\n        path: /\n        pathType: Prefix\n",
+    "complexity_score": 3.28,
+    "resource_type": "Ingress"
+  }
+]

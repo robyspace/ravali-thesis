@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-7
+spec:
+  rules:
+  - host: app-7.example.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: service-7
+            port:
+              number: 80
+        path: /
+        pathType: Prefix

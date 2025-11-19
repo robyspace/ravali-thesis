@@ -1,0 +1,130 @@
+{
+  "study_date": "2024-11-05",
+  "model_path": "/content/drive/MyDrive/ravali/thesis-research/final_model_v3",
+  "device": "cuda",
+  "codebleu_language": "python",
+  "num_cases": 8,
+  "correlation": 0.25524121959691815,
+  "results": [
+    {
+      "id": 1,
+      "category": "GOOD",
+      "intent": "Deploy nginx with 3 replicas",
+      "codebleu": 0.583444153472535,
+      "codebleu_ngram": 0.40648938180499544,
+      "codebleu_syntax": 0.5208333333333334,
+      "codebleu_dataflow": 0.0,
+      "quality_score": 60,
+      "deployable": true,
+      "has_best_practices": false,
+      "generated_preview": "apiVersion: serving.knative.dev/v1\nkind: Deploynginx\nmetadata:\n  name: nginx\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: nginx\n  template:\n    metadata:\n      labels:\n        app: ngin..."
+    },
+    {
+      "id": 2,
+      "category": "GOOD",
+      "intent": "Create a service for nginx on port 80",
+      "codebleu": 0.567070227043632,
+      "codebleu_ngram": 0.2951354925414509,
+      "codebleu_syntax": 0.6666666666666666,
+      "codebleu_dataflow": 0.0,
+      "quality_score": 70,
+      "deployable": true,
+      "has_best_practices": false,
+      "generated_preview": "apiVersion: v1\nkind: Service\nmetadata:\n  name: nginx\nspec:\n  ports:\n  - name: http\n    port: 80\n  selector:\n    app: nginx\n"
+    },
+    {
+      "id": 3,
+      "category": "NEARLY_GOOD",
+      "intent": "Deploy nginx with service",
+      "codebleu": 0.3347050529430544,
+      "codebleu_ngram": 0.0013314958395719968,
+      "codebleu_syntax": 0.3238095238095238,
+      "codebleu_dataflow": 0.0,
+      "quality_score": 60,
+      "deployable": true,
+      "has_best_practices": false,
+      "generated_preview": "apiVersion: serving.knative.dev/v1\nkind: Deploynginx\nmetadata:\n  name: nginx\nspec:\n  service: nginx\n"
+    },
+    {
+      "id": 4,
+      "category": "NEARLY_GOOD",
+      "intent": "Deploy redis with persistent storage",
+      "codebleu": 0.5767625211972585,
+      "codebleu_ngram": 0.32194609502609595,
+      "codebleu_syntax": 0.6631578947368421,
+      "codebleu_dataflow": 0.0,
+      "quality_score": 60,
+      "deployable": true,
+      "has_best_practices": false,
+      "generated_preview": "apiVersion: serving.knative.dev/v1\nkind: Deploy redis\nmetadata:\n  name: redis\nspec:\n  persistentStorage: true\n  selector:\n    matchLabels:\n      app: redis\n  template:\n    metadata:\n      labels:\n    ..."
+    },
+    {
+      "id": 5,
+      "category": "BAD",
+      "intent": "Deploy nginx with health checks and resource limits",
+      "codebleu": 0.3240779587435403,
+      "codebleu_ngram": 0.003095083198837207,
+      "codebleu_syntax": 0.28125,
+      "codebleu_dataflow": 0.0,
+      "quality_score": 60,
+      "deployable": true,
+      "has_best_practices": false,
+      "generated_preview": "apiVersion: serving.knative.dev/v1\nkind: Deploynginx\nmetadata:\n  name: nginx\nspec:\n  healthChecks:\n  - resourceLimits:\n  - limits\n  verbs:\n  - get\n"
+    },
+    {
+      "id": 6,
+      "category": "BAD",
+      "intent": "Create microservice with configmap and secrets",
+      "codebleu": 0.3715027681100475,
+      "codebleu_ngram": 0.011189519908037444,
+      "codebleu_syntax": 0.4636363636363636,
+      "codebleu_dataflow": 0.0,
+      "quality_score": 0,
+      "deployable": false,
+      "has_best_practices": false,
+      "generated_preview": "apiVersion: v1\nkind: Microservice\nmetadata:\n  name: microservice.kubernetes.io/instance: microservice\nspec:\n  secrets:\n  - configmap:\n    secrets:\n    - secrets:\n    - secretRef:\n      key: v1alpha1\n ..."
+    },
+    {
+      "id": 7,
+      "category": "WORSE",
+      "intent": "Deploy app",
+      "codebleu": 0.450943932543634,
+      "codebleu_ngram": 0.02955933155843991,
+      "codebleu_syntax": 0.703125,
+      "codebleu_dataflow": 0.0,
+      "quality_score": 0,
+      "deployable": false,
+      "has_best_practices": false,
+      "generated_preview": "apiVersion: apps/v1\nkind: Deploy\nmetadata:\n  name: app.kubernetes.io/instance: Deploy\n  namespace: default\nspec:\n  template:\n    spec:\n      containers:\n      - env:\n        - name: TARGET\n          v..."
+    },
+    {
+      "id": 8,
+      "category": "WORSE",
+      "intent": "Setup production monitoring system",
+      "codebleu": 0.38480471785906284,
+      "codebleu_ngram": 0.01773949116201572,
+      "codebleu_syntax": 0.5,
+      "codebleu_dataflow": 0.0,
+      "quality_score": 60,
+      "deployable": true,
+      "has_best_practices": false,
+      "generated_preview": "apiVersion: monitoring.coreos.com/v1\nkind: Monitoring\nmetadata:\n  name: production\nspec:\n  group: monitoring.coreos.com\n  names:\n    kind: Production\n    plural: production\n  scope: Namespaced\n  versi..."
+    }
+  ],
+  "category_averages": {
+    "GOOD": 0.5752571902580834,
+    "NEARLY_GOOD": 0.45573378707015644,
+    "BAD": 0.3477903634267939,
+    "WORSE": 0.41787432520134843
+  },
+  "conclusions": {
+    "codebleu_predicts_deployability": true,
+    "codebleu_predicts_best_practices": false,
+    "need_multi_metric_evaluation": true,
+    "recommended_metrics": [
+      "CodeBLEU",
+      "Best Practices %",
+      "Security Compliance"
+    ]
+  }
+}

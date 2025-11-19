@@ -1,0 +1,3071 @@
+{
+  "collection_date": "2025-11-05T17:11:04.697080",
+  "total_manifests": 118,
+  "by_resource_type": {
+    "total": 118,
+    "validatingadmissionpolicy": 4,
+    "clusterrole": 3,
+    "clusterrolebinding": 2,
+    "role": 3,
+    "rolebinding": 4,
+    "namespace": 15,
+    "deployment": 10,
+    "daemonset": 1,
+    "customresourcedefinition": 23,
+    "podmonitor": 1,
+    "serviceaccount": 8,
+    "application": 1,
+    "service": 21,
+    "gateway": 3,
+    "statefulset": 2,
+    "kustomization": 3,
+    "networkpolicy": 4,
+    "alertmanager": 1,
+    "poddisruptionbudget": 1,
+    "prometheusrule": 1,
+    "secret": 3,
+    "servicemonitor": 2,
+    "configmap": 1,
+    "githubsource": 1
+  },
+  "sources": [
+    "kubernetes/examples",
+    "kubernetes/website",
+    "bitnami/charts",
+    "istio/istio",
+    "argoproj/argo-cd",
+    "prometheus-operator/kube-prometheus",
+    "knative/docs",
+    "linkerd/linkerd2",
+    "cert-manager/cert-manager",
+    "kubernetes/ingress-nginx"
+  ],
+  "manifests": [
+    {
+      "file_name": "deployment-replicas-policy.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:10.223542",
+      "line_count": 20,
+      "resources": [
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingAdmissionPolicy",
+          "name": "deploy-replica-policy.example.com"
+        }
+      ],
+      "complexity_score": 4.2,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_deployment-replicas-policy_0.yaml"
+    },
+    {
+      "file_name": "endpoints-aggregated.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:13.018768",
+      "line_count": 21,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "custom:aggregate-to-edit:endpoints"
+        }
+      ],
+      "complexity_score": 3.3,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_endpoints-aggregated_0.yaml"
+    },
+    {
+      "file_name": "image-matches-namespace-environment.policy.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:14.937304",
+      "line_count": 28,
+      "resources": [
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingAdmissionPolicy",
+          "name": "image-matches-namespace-environment.policy.example.com"
+        }
+      ],
+      "complexity_score": 4.5,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_image-matches-namespace-environment.policy_1.yaml"
+    },
+    {
+      "file_name": "simple-clusterrole.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:16.591065",
+      "line_count": 13,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "secret-reader"
+        }
+      ],
+      "complexity_score": 3.1,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_simple-clusterrole_1.yaml"
+    },
+    {
+      "file_name": "simple-clusterrolebinding.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:18.423626",
+      "line_count": 14,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "read-secrets-global"
+        }
+      ],
+      "complexity_score": 2.5,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_simple-clusterrolebinding_0.yaml"
+    },
+    {
+      "file_name": "simple-role.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:20.242836",
+      "line_count": 10,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "pod-reader"
+        }
+      ],
+      "complexity_score": 3.15,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_simple-role_0.yaml"
+    },
+    {
+      "file_name": "simple-rolebinding-with-clusterrole.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:23.159275",
+      "line_count": 19,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "read-secrets"
+        }
+      ],
+      "complexity_score": 2.55,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_simple-rolebinding-with-clusterrole_0.yaml"
+    },
+    {
+      "file_name": "simple-rolebinding-with-role.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:25.058412",
+      "line_count": 18,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "read-pods"
+        }
+      ],
+      "complexity_score": 2.55,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_simple-rolebinding-with-role_1.yaml"
+    },
+    {
+      "file_name": "validating-admission-policy-audit-annotation.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:27.050017",
+      "line_count": 19,
+      "resources": [
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingAdmissionPolicy",
+          "name": "demo-policy.example.com"
+        }
+      ],
+      "complexity_score": 4.2,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_validating-admission-policy-audit-annotation_2.yaml"
+    },
+    {
+      "file_name": "validating-admission-policy-match-conditions.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:29.325469",
+      "line_count": 23,
+      "resources": [
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingAdmissionPolicy",
+          "name": "demo-policy.example.com"
+        }
+      ],
+      "complexity_score": 4.35,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_validating-admission-policy-match-conditions_3.yaml"
+    },
+    {
+      "file_name": "namespace-dev.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:31.965765",
+      "line_count": 7,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "development"
+        }
+      ],
+      "complexity_score": 2.2,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_namespace-dev_0.yaml"
+    },
+    {
+      "file_name": "namespace-prod.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:33.744417",
+      "line_count": 7,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "production"
+        }
+      ],
+      "complexity_score": 2.2,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_website_namespace-prod_1.yaml"
+    },
+    {
+      "file_name": "snowflake-deployment.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:35.471760",
+      "line_count": 21,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "snowflake"
+        }
+      ],
+      "complexity_score": 4.6,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/deployments/kubernetes_website_snowflake-deployment_0.yaml"
+    },
+    {
+      "file_name": "basic-daemonset.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:39.158363",
+      "line_count": 34,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "DaemonSet",
+          "name": "example-daemonset"
+        }
+      ],
+      "complexity_score": 5.9,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/daemonsets/kubernetes_website_basic-daemonset_0.yaml"
+    },
+    {
+      "file_name": "deployment-patch.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:41.463092",
+      "line_count": 22,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "patch-demo"
+        }
+      ],
+      "complexity_score": 4.65,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/deployments/kubernetes_website_deployment-patch_1.yaml"
+    },
+    {
+      "file_name": "deployment-retainkeys.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:43.151449",
+      "line_count": 20,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "retainkeys-demo"
+        }
+      ],
+      "complexity_score": 4.55,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/deployments/kubernetes_website_deployment-retainkeys_2.yaml"
+    },
+    {
+      "file_name": "deployment-scale.yaml",
+      "source_repo": "kubernetes/website",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:57:44.934426",
+      "line_count": 20,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "nginx-deployment"
+        }
+      ],
+      "complexity_score": 5.15,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/deployments/kubernetes_website_deployment-scale_3.yaml"
+    },
+    {
+      "file_name": "crds.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T16:59:02.679069",
+      "line_count": 1496,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "apisixclusterconfigs.apisix.apache.org"
+        },
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "apisixconsumers.apisix.apache.org"
+        },
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "apisixglobalrules.apisix.apache.org"
+        },
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "apisixpluginconfigs.apisix.apache.org"
+        },
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "apisixroutes.apisix.apache.org"
+        },
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "apisixtlses.apisix.apache.org"
+        },
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "apisixupstreams.apisix.apache.org"
+        }
+      ],
+      "complexity_score": 107.2,
+      "resource_count": 7,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_crds_0.yaml"
+    },
+    {
+      "file_name": "application.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:00:19.422952",
+      "line_count": 5893,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "applications.argoproj.io"
+        }
+      ],
+      "complexity_score": 234.35,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_application_1.yaml"
+    },
+    {
+      "file_name": "applicationset.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:00:28.313180",
+      "line_count": 17727,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "applicationsets.argoproj.io"
+        }
+      ],
+      "complexity_score": 844.15,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_applicationset_2.yaml"
+    },
+    {
+      "file_name": "project.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:00:32.232707",
+      "line_count": 369,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "appprojects.argoproj.io"
+        }
+      ],
+      "complexity_score": 20.1,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_project_3.yaml"
+    },
+    {
+      "file_name": "argoproj.io_clusterworkflowtemplates.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:01:54.444939",
+      "line_count": 39,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "clusterworkflowtemplates.argoproj.io"
+        }
+      ],
+      "complexity_score": 5.0,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_argoproj.io_clusterworkflowtemplates_4.yaml"
+    },
+    {
+      "file_name": "argoproj.io_cronworkflows.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:01:56.104199",
+      "line_count": 43,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "cronworkflows.argoproj.io"
+        }
+      ],
+      "complexity_score": 5.2,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_argoproj.io_cronworkflows_5.yaml"
+    },
+    {
+      "file_name": "argoproj.io_eventbus.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:01:57.738381",
+      "line_count": 42,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "eventbus.argoproj.io"
+        }
+      ],
+      "complexity_score": 5.7,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_argoproj.io_eventbus_6.yaml"
+    },
+    {
+      "file_name": "argoproj.io_eventsources.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:01:59.347333",
+      "line_count": 42,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "eventsources.argoproj.io"
+        }
+      ],
+      "complexity_score": 5.7,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_argoproj.io_eventsources_7.yaml"
+    },
+    {
+      "file_name": "argoproj.io_sensors.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:02:00.962804",
+      "line_count": 42,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "sensors.argoproj.io"
+        }
+      ],
+      "complexity_score": 5.7,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_argoproj.io_sensors_8.yaml"
+    },
+    {
+      "file_name": "argoproj.io_workflowartifactgctasks.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:02:03.129540",
+      "line_count": 1141,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "workflowartifactgctasks.argoproj.io"
+        }
+      ],
+      "complexity_score": 61.7,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_argoproj.io_workflowartifactgctasks_9.yaml"
+    },
+    {
+      "file_name": "argoproj.io_workfloweventbindings.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:02:05.149774",
+      "line_count": 704,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "workfloweventbindings.argoproj.io"
+        }
+      ],
+      "complexity_score": 41.3,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_argoproj.io_workfloweventbindings_10.yaml"
+    },
+    {
+      "file_name": "argoproj.io_workflows.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:02:06.817103",
+      "line_count": 58,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "workflows.argoproj.io"
+        }
+      ],
+      "complexity_score": 6.45,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_argoproj.io_workflows_11.yaml"
+    },
+    {
+      "file_name": "argoproj.io_workflowtaskresults.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:02:08.586950",
+      "line_count": 666,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "workflowtaskresults.argoproj.io"
+        }
+      ],
+      "complexity_score": 38.45,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_argoproj.io_workflowtaskresults_12.yaml"
+    },
+    {
+      "file_name": "argoproj.io_workflowtasksets.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:02:10.596240",
+      "line_count": 44,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "workflowtasksets.argoproj.io"
+        }
+      ],
+      "complexity_score": 5.8,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_argoproj.io_workflowtasksets_13.yaml"
+    },
+    {
+      "file_name": "argoproj.io_workflowtemplates.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:02:12.159300",
+      "line_count": 38,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "workflowtemplates.argoproj.io"
+        }
+      ],
+      "complexity_score": 5.0,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_argoproj.io_workflowtemplates_14.yaml"
+    },
+    {
+      "file_name": "clickhouseinstallations.clickhouse.altinity.com.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:24.754543",
+      "line_count": 1384,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "clickhouseinstallations.clickhouse.altinity.com"
+        }
+      ],
+      "complexity_score": 71.4,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_clickhouseinstallations.clickhouse.altinity.com_15.yaml"
+    },
+    {
+      "file_name": "clickhouseinstallationtemplates.clickhouse.altinity.com.yaml",
+      "source_repo": "bitnami/charts",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:26.648389",
+      "line_count": 1384,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "clickhouseinstallationtemplates.clickhouse.altinity.com"
+        }
+      ],
+      "complexity_score": 71.4,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/bitnami_charts_clickhouseinstallationtemplates.clickhouse.altinity.com_16.yaml"
+    },
+    {
+      "file_name": "prometheus-operator.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:34.354996",
+      "line_count": 67,
+      "resources": [
+        {
+          "apiVersion": "monitoring.coreos.com/v1",
+          "kind": "PodMonitor",
+          "name": "envoy-stats-monitor"
+        },
+        {
+          "apiVersion": "monitoring.coreos.com/v1",
+          "kind": "ServiceMonitor",
+          "name": "istio-component-monitor"
+        }
+      ],
+      "complexity_score": 9.1,
+      "resource_count": 2,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/istio_istio_prometheus-operator_0.yaml"
+    },
+    {
+      "file_name": "skywalking.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:36.081458",
+      "line_count": 134,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "skywalking-oap"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "tracing"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "skywalking-oap"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "skywalking-ui"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "tracing-ui"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "skywalking-ui"
+        }
+      ],
+      "complexity_score": 24.15,
+      "resource_count": 6,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/deployments/istio_istio_skywalking_4.yaml"
+    },
+    {
+      "file_name": "zipkin.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:37.826030",
+      "line_count": 62,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "zipkin"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "tracing"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "zipkin"
+        }
+      ],
+      "complexity_score": 11.75,
+      "resource_count": 3,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/deployments/istio_istio_zipkin_5.yaml"
+    },
+    {
+      "file_name": "grafana.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:40.561062",
+      "line_count": 1131,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "grafana"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "grafana"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "grafana"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "grafana"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "istio-grafana-dashboards"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "istio-services-grafana-dashboards"
+        }
+      ],
+      "complexity_score": 26.75,
+      "resource_count": 6,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/istio_istio_grafana_0.yaml"
+    },
+    {
+      "file_name": "jaeger.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:42.427865",
+      "line_count": 122,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "jaeger"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "tracing"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "zipkin"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "jaeger-collector"
+        }
+      ],
+      "complexity_score": 18.5,
+      "resource_count": 4,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/deployments/istio_istio_jaeger_6.yaml"
+    },
+    {
+      "file_name": "kiali.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:44.110777",
+      "line_count": 457,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "kiali"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "kiali"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "kiali"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "kiali"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "kiali"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "kiali"
+        }
+      ],
+      "complexity_score": 31.25,
+      "resource_count": 6,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/istio_istio_kiali_1.yaml"
+    },
+    {
+      "file_name": "loki.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:45.730598",
+      "line_count": 386,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "loki"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "loki"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "loki-runtime"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "loki-clusterrole"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "loki-clusterrolebinding"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "loki-memberlist"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "loki-headless"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "loki"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "StatefulSet",
+          "name": "loki"
+        }
+      ],
+      "complexity_score": 39.5,
+      "resource_count": 9,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/istio_istio_loki_2.yaml"
+    },
+    {
+      "file_name": "prometheus.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:47.423611",
+      "line_count": 560,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "prometheus"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "prometheus"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "prometheus"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "prometheus"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "prometheus"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "prometheus"
+        }
+      ],
+      "complexity_score": 25.55,
+      "resource_count": 6,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/istio_istio_prometheus_3.yaml"
+    },
+    {
+      "file_name": "application.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:51.308176",
+      "line_count": 22,
+      "resources": [
+        {
+          "apiVersion": "argoproj.io/v1alpha1",
+          "kind": "Application",
+          "name": "bookinfo-application"
+        }
+      ],
+      "complexity_score": 3.75,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/istio_istio_application_0.yaml"
+    },
+    {
+      "file_name": "bookinfo-versions.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:52.998854",
+      "line_count": 73,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "reviews-v1"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "reviews-v2"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "reviews-v3"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "productpage-v1"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ratings-v1"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "details-v1"
+        }
+      ],
+      "complexity_score": 16.5,
+      "resource_count": 6,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/istio_istio_bookinfo-versions_0.yaml"
+    },
+    {
+      "file_name": "details-waypoint.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:55.332551",
+      "line_count": 12,
+      "resources": [
+        {
+          "apiVersion": "gateway.networking.k8s.io/v1",
+          "kind": "Gateway",
+          "name": "bookinfo-details"
+        }
+      ],
+      "complexity_score": 2.8,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/istio_istio_details-waypoint_0.yaml"
+    },
+    {
+      "file_name": "details.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:57.067764",
+      "line_count": 50,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "details"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "bookinfo-details"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "details-v1"
+        }
+      ],
+      "complexity_score": 10.55,
+      "resource_count": 3,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/istio_istio_details_1.yaml"
+    },
+    {
+      "file_name": "ingress-gateway.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:05:58.952779",
+      "line_count": 41,
+      "resources": [
+        {
+          "apiVersion": "gateway.networking.k8s.io/v1",
+          "kind": "Gateway",
+          "name": "bookinfo-gateway"
+        },
+        {
+          "apiVersion": "gateway.networking.k8s.io/v1",
+          "kind": "HTTPRoute",
+          "name": "bookinfo"
+        }
+      ],
+      "complexity_score": 7.9,
+      "resource_count": 2,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/istio_istio_ingress-gateway_1.yaml"
+    },
+    {
+      "file_name": "namespace.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:00.742456",
+      "line_count": 4,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "ambient"
+        }
+      ],
+      "complexity_score": 1.8,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/istio_istio_namespace_2.yaml"
+    },
+    {
+      "file_name": "productpage.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:02.699884",
+      "line_count": 60,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "productpage"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "bookinfo-productpage"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "productpage-v1"
+        }
+      ],
+      "complexity_score": 11.05,
+      "resource_count": 3,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/istio_istio_productpage_2.yaml"
+    },
+    {
+      "file_name": "ratings.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:04.425515",
+      "line_count": 50,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ratings"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "bookinfo-ratings"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "ratings-v1"
+        }
+      ],
+      "complexity_score": 10.55,
+      "resource_count": 3,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/istio_istio_ratings_3.yaml"
+    },
+    {
+      "file_name": "reviews-waypoint.yaml",
+      "source_repo": "istio/istio",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:06.363750",
+      "line_count": 12,
+      "resources": [
+        {
+          "apiVersion": "gateway.networking.k8s.io/v1",
+          "kind": "Gateway",
+          "name": "bookinfo-reviews"
+        }
+      ],
+      "complexity_score": 2.8,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/istio_istio_reviews-waypoint_2.yaml"
+    },
+    {
+      "file_name": "argocd-application-controller-deployment.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:14.709237",
+      "line_count": 334,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "argocd-application-controller"
+        }
+      ],
+      "complexity_score": 30.9,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/deployments/argoproj_argo-cd_argocd-application-controller-deployment_7.yaml"
+    },
+    {
+      "file_name": "argocd-application-controller-service.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:16.367519",
+      "line_count": 20,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "argocd-application-controller"
+        }
+      ],
+      "complexity_score": 3.2,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/argoproj_argo-cd_argocd-application-controller-service_4.yaml"
+    },
+    {
+      "file_name": "argocd-application-controller-statefulset.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:17.870764",
+      "line_count": 15,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "StatefulSet",
+          "name": "argocd-application-controller"
+        }
+      ],
+      "complexity_score": 5.1,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/statefulsets/argoproj_argo-cd_argocd-application-controller-statefulset_0.yaml"
+    },
+    {
+      "file_name": "kustomization.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:19.919531",
+      "line_count": 10,
+      "resources": [
+        {
+          "apiVersion": "kustomize.config.k8s.io/v1beta1",
+          "kind": "Kustomization",
+          "name": "unnamed"
+        }
+      ],
+      "complexity_score": 2.25,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_kustomization_0.yaml"
+    },
+    {
+      "file_name": "argocd-application-controller-role.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:22.858610",
+      "line_count": 48,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "argocd-application-controller"
+        }
+      ],
+      "complexity_score": 3.75,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_argocd-application-controller-role_1.yaml"
+    },
+    {
+      "file_name": "argocd-application-controller-rolebinding.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:24.479185",
+      "line_count": 16,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "argocd-application-controller"
+        }
+      ],
+      "complexity_score": 2.65,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_argocd-application-controller-rolebinding_2.yaml"
+    },
+    {
+      "file_name": "argocd-application-controller-sa.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:26.329997",
+      "line_count": 9,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "argocd-application-controller"
+        }
+      ],
+      "complexity_score": 2.3,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_argocd-application-controller-sa_4.yaml"
+    },
+    {
+      "file_name": "kustomization.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:28.082690",
+      "line_count": 8,
+      "resources": [
+        {
+          "apiVersion": "kustomize.config.k8s.io/v1beta1",
+          "kind": "Kustomization",
+          "name": "unnamed"
+        }
+      ],
+      "complexity_score": 2.25,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_kustomization_1.yaml"
+    },
+    {
+      "file_name": "argocd-application-controller-network-policy.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:30.928656",
+      "line_count": 19,
+      "resources": [
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "NetworkPolicy",
+          "name": "argocd-application-controller-network-policy"
+        }
+      ],
+      "complexity_score": 3.7,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/networkpolicies/argoproj_argo-cd_argocd-application-controller-network-policy_0.yaml"
+    },
+    {
+      "file_name": "argocd-application-controller-statefulset.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:33.245795",
+      "line_count": 355,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "StatefulSet",
+          "name": "argocd-application-controller"
+        }
+      ],
+      "complexity_score": 32.75,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/statefulsets/argoproj_argo-cd_argocd-application-controller-statefulset_1.yaml"
+    },
+    {
+      "file_name": "argocd-metrics.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:34.895285",
+      "line_count": 17,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "argocd-metrics"
+        }
+      ],
+      "complexity_score": 3.0,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/argoproj_argo-cd_argocd-metrics_5.yaml"
+    },
+    {
+      "file_name": "kustomization.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:36.606408",
+      "line_count": 8,
+      "resources": [
+        {
+          "apiVersion": "kustomize.config.k8s.io/v1beta1",
+          "kind": "Kustomization",
+          "name": "unnamed"
+        }
+      ],
+      "complexity_score": 2.25,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_kustomization_2.yaml"
+    },
+    {
+      "file_name": "argocd-applicationset-controller-deployment.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:39.347865",
+      "line_count": 254,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "argocd-applicationset-controller"
+        }
+      ],
+      "complexity_score": 24.5,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/deployments/argoproj_argo-cd_argocd-applicationset-controller-deployment_8.yaml"
+    },
+    {
+      "file_name": "argocd-applicationset-controller-network-policy.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:41.051601",
+      "line_count": 23,
+      "resources": [
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "NetworkPolicy",
+          "name": "argocd-applicationset-controller-network-policy"
+        }
+      ],
+      "complexity_score": 3.85,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/networkpolicies/argoproj_argo-cd_argocd-applicationset-controller-network-policy_1.yaml"
+    },
+    {
+      "file_name": "argocd-applicationset-controller-role.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:42.773517",
+      "line_count": 78,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "argocd-applicationset-controller"
+        }
+      ],
+      "complexity_score": 4.25,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_argocd-applicationset-controller-role_2.yaml"
+    },
+    {
+      "file_name": "argocd-applicationset-controller-rolebinding.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:44.365829",
+      "line_count": 16,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "argocd-applicationset-controller"
+        }
+      ],
+      "complexity_score": 2.65,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_argocd-applicationset-controller-rolebinding_3.yaml"
+    },
+    {
+      "file_name": "argocd-applicationset-controller-sa.yaml",
+      "source_repo": "argoproj/argo-cd",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:06:46.200857",
+      "line_count": 9,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "argocd-applicationset-controller"
+        }
+      ],
+      "complexity_score": 2.3,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/argoproj_argo-cd_argocd-applicationset-controller-sa_5.yaml"
+    },
+    {
+      "file_name": "alertmanager-alertmanager.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:06:52.780844",
+      "line_count": 39,
+      "resources": [
+        {
+          "apiVersion": "monitoring.coreos.com/v1",
+          "kind": "Alertmanager",
+          "name": "main"
+        }
+      ],
+      "complexity_score": 5.6,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_alertmanager-alertmanager_0.yaml"
+    },
+    {
+      "file_name": "alertmanager-networkPolicy.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:06:54.536153",
+      "line_count": 43,
+      "resources": [
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "NetworkPolicy",
+          "name": "alertmanager-main"
+        }
+      ],
+      "complexity_score": 5.35,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/networkpolicies/prometheus-operator_kube-prometheus_alertmanager-networkPolicy_2.yaml"
+    },
+    {
+      "file_name": "alertmanager-podDisruptionBudget.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:06:56.314744",
+      "line_count": 20,
+      "resources": [
+        {
+          "apiVersion": "policy/v1",
+          "kind": "PodDisruptionBudget",
+          "name": "alertmanager-main"
+        }
+      ],
+      "complexity_score": 3.15,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_alertmanager-podDisruptionBudget_0.yaml"
+    },
+    {
+      "file_name": "alertmanager-prometheusRule.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:06:58.134913",
+      "line_count": 140,
+      "resources": [
+        {
+          "apiVersion": "monitoring.coreos.com/v1",
+          "kind": "PrometheusRule",
+          "name": "alertmanager-main-rules"
+        }
+      ],
+      "complexity_score": 7.55,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_alertmanager-prometheusRule_0.yaml"
+    },
+    {
+      "file_name": "alertmanager-secret.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:00.038471",
+      "line_count": 60,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Secret",
+          "name": "alertmanager-main"
+        }
+      ],
+      "complexity_score": 2.6,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/secrets/prometheus-operator_kube-prometheus_alertmanager-secret_0.yaml"
+    },
+    {
+      "file_name": "alertmanager-service.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:02.631437",
+      "line_count": 26,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "alertmanager-main"
+        }
+      ],
+      "complexity_score": 3.45,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/prometheus-operator_kube-prometheus_alertmanager-service_6.yaml"
+    },
+    {
+      "file_name": "alertmanager-serviceAccount.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:04.411821",
+      "line_count": 13,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "alertmanager-main"
+        }
+      ],
+      "complexity_score": 2.5,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_alertmanager-serviceAccount_6.yaml"
+    },
+    {
+      "file_name": "alertmanager-serviceMonitor.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:06.307271",
+      "line_count": 24,
+      "resources": [
+        {
+          "apiVersion": "monitoring.coreos.com/v1",
+          "kind": "ServiceMonitor",
+          "name": "alertmanager-main"
+        }
+      ],
+      "complexity_score": 3.35,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_alertmanager-serviceMonitor_0.yaml"
+    },
+    {
+      "file_name": "blackboxExporter-clusterRole.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:07.979181",
+      "line_count": 23,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "blackbox-exporter"
+        }
+      ],
+      "complexity_score": 3.5,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_blackboxExporter-clusterRole_2.yaml"
+    },
+    {
+      "file_name": "blackboxExporter-clusterRoleBinding.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:09.822178",
+      "line_count": 18,
+      "resources": [
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "blackbox-exporter"
+        }
+      ],
+      "complexity_score": 2.75,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_blackboxExporter-clusterRoleBinding_1.yaml"
+    },
+    {
+      "file_name": "blackboxExporter-configuration.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:11.670060",
+      "line_count": 52,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "blackbox-exporter-configuration"
+        }
+      ],
+      "complexity_score": 2.5,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/configmaps/prometheus-operator_kube-prometheus_blackboxExporter-configuration_0.yaml"
+    },
+    {
+      "file_name": "blackboxExporter-deployment.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:13.765928",
+      "line_count": 119,
+      "resources": [
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "blackbox-exporter"
+        }
+      ],
+      "complexity_score": 13.0,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/deployments/prometheus-operator_kube-prometheus_blackboxExporter-deployment_9.yaml"
+    },
+    {
+      "file_name": "blackboxExporter-networkPolicy.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:15.560832",
+      "line_count": 32,
+      "resources": [
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "NetworkPolicy",
+          "name": "blackbox-exporter"
+        }
+      ],
+      "complexity_score": 4.8,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/networkpolicies/prometheus-operator_kube-prometheus_blackboxExporter-networkPolicy_3.yaml"
+    },
+    {
+      "file_name": "blackboxExporter-service.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:17.367757",
+      "line_count": 23,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "blackbox-exporter"
+        }
+      ],
+      "complexity_score": 3.3,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/prometheus-operator_kube-prometheus_blackboxExporter-service_7.yaml"
+    },
+    {
+      "file_name": "blackboxExporter-serviceAccount.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:19.112846",
+      "line_count": 12,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "blackbox-exporter"
+        }
+      ],
+      "complexity_score": 2.45,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_blackboxExporter-serviceAccount_7.yaml"
+    },
+    {
+      "file_name": "blackboxExporter-serviceMonitor.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:21.029055",
+      "line_count": 25,
+      "resources": [
+        {
+          "apiVersion": "monitoring.coreos.com/v1",
+          "kind": "ServiceMonitor",
+          "name": "blackbox-exporter"
+        }
+      ],
+      "complexity_score": 3.7,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/prometheus-operator_kube-prometheus_blackboxExporter-serviceMonitor_1.yaml"
+    },
+    {
+      "file_name": "grafana-config.yaml",
+      "source_repo": "prometheus-operator/kube-prometheus",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:22.811504",
+      "line_count": 16,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Secret",
+          "name": "grafana-config"
+        }
+      ],
+      "complexity_score": 2.55,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/secrets/prometheus-operator_kube-prometheus_grafana-config_1.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:31.214147",
+      "line_count": 14,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "helloworld-clojure"
+        }
+      ],
+      "complexity_score": 5.05,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_8.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:35.480635",
+      "line_count": 14,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "helloworld-dart"
+        }
+      ],
+      "complexity_score": 5.05,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_9.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:39.895338",
+      "line_count": 14,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "helloworld-elixir"
+        }
+      ],
+      "complexity_score": 5.05,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_10.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:43.507868",
+      "line_count": 14,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "helloworld-haskell"
+        }
+      ],
+      "complexity_score": 5.05,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_11.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:48.125924",
+      "line_count": 13,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "helloworld-java-micronaut"
+        }
+      ],
+      "complexity_score": 5.0,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_12.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:50.983796",
+      "line_count": 13,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "helloworld-java-quarkus"
+        }
+      ],
+      "complexity_score": 5.0,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_13.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:53.577542",
+      "line_count": 14,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "helloworld-r"
+        }
+      ],
+      "complexity_score": 5.05,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_14.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:56.401435",
+      "line_count": 14,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "helloworld-rserver"
+        }
+      ],
+      "complexity_score": 5.05,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_15.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:07:59.070694",
+      "line_count": 14,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "helloworld-rust"
+        }
+      ],
+      "complexity_score": 5.05,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_16.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:08:01.916997",
+      "line_count": 14,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "helloworld-swift"
+        }
+      ],
+      "complexity_score": 5.05,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_17.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:08:04.537320",
+      "line_count": 13,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "helloworld-vertx"
+        }
+      ],
+      "complexity_score": 5.0,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_18.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:08:07.362834",
+      "line_count": 25,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "iris-classifier"
+        }
+      ],
+      "complexity_score": 5.4,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_19.yaml"
+    },
+    {
+      "file_name": "github-source.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:08:14.662595",
+      "line_count": 24,
+      "resources": [
+        {
+          "apiVersion": "sources.knative.dev/v1alpha1",
+          "kind": "GitHubSource",
+          "name": "githubsourcesample"
+        }
+      ],
+      "complexity_score": 3.2,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/knative_docs_github-source_0.yaml"
+    },
+    {
+      "file_name": "githubsecret.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:08:16.477516",
+      "line_count": 9,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Secret",
+          "name": "githubsecret"
+        }
+      ],
+      "complexity_score": 2.0,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/secrets/knative_docs_githubsecret_2.yaml"
+    },
+    {
+      "file_name": "service.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:08:18.206075",
+      "line_count": 11,
+      "resources": [
+        {
+          "apiVersion": "serving.knative.dev/v1",
+          "kind": "Service",
+          "name": "github-message-dumper"
+        }
+      ],
+      "complexity_score": 4.05,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/services/knative_docs_service_20.yaml"
+    },
+    {
+      "file_name": "sample-app.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:08:22.387696",
+      "line_count": 71,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "knative-samples"
+        },
+        {
+          "apiVersion": "eventing.knative.dev/v1",
+          "kind": "Broker",
+          "name": "default"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "helloworld-go"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "helloworld-go"
+        },
+        {
+          "apiVersion": "eventing.knative.dev/v1",
+          "kind": "Trigger",
+          "name": "helloworld-go"
+        }
+      ],
+      "complexity_score": 14.4,
+      "resource_count": 5,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/knative_docs_sample-app_3.yaml"
+    },
+    {
+      "file_name": "sample-app.yaml",
+      "source_repo": "knative/docs",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:08:25.392336",
+      "line_count": 74,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "knative-samples"
+        },
+        {
+          "apiVersion": "eventing.knative.dev/v1",
+          "kind": "Broker",
+          "name": "default"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "helloworld-python"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "helloworld-python"
+        },
+        {
+          "apiVersion": "eventing.knative.dev/v1",
+          "kind": "Trigger",
+          "name": "helloworld-python"
+        }
+      ],
+      "complexity_score": 14.85,
+      "resource_count": 5,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/knative_docs_sample-app_4.yaml"
+    },
+    {
+      "file_name": "acme.cert-manager.io_challenges.yaml",
+      "source_repo": "cert-manager/cert-manager",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:10:08.051928",
+      "line_count": 3477,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "challenges.acme.cert-manager.io"
+        }
+      ],
+      "complexity_score": 106.85,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/cert-manager_cert-manager_acme.cert-manager.io_challenges_17.yaml"
+    },
+    {
+      "file_name": "acme.cert-manager.io_orders.yaml",
+      "source_repo": "cert-manager/cert-manager",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:10:10.102133",
+      "line_count": 275,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "orders.acme.cert-manager.io"
+        }
+      ],
+      "complexity_score": 14.2,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/cert-manager_cert-manager_acme.cert-manager.io_orders_18.yaml"
+    },
+    {
+      "file_name": "cert-manager.io_certificaterequests.yaml",
+      "source_repo": "cert-manager/cert-manager",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:10:11.748674",
+      "line_count": 320,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "certificaterequests.cert-manager.io"
+        }
+      ],
+      "complexity_score": 13.6,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/cert-manager_cert-manager_cert-manager.io_certificaterequests_19.yaml"
+    },
+    {
+      "file_name": "cert-manager.io_certificates.yaml",
+      "source_repo": "cert-manager/cert-manager",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:10:13.418702",
+      "line_count": 828,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "certificates.cert-manager.io"
+        }
+      ],
+      "complexity_score": 27.5,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/cert-manager_cert-manager_cert-manager.io_certificates_20.yaml"
+    },
+    {
+      "file_name": "cert-manager.io_clusterissuers.yaml",
+      "source_repo": "cert-manager/cert-manager",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:10:16.238281",
+      "line_count": 4069,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "clusterissuers.cert-manager.io"
+        }
+      ],
+      "complexity_score": 122.6,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/cert-manager_cert-manager_cert-manager.io_clusterissuers_21.yaml"
+    },
+    {
+      "file_name": "cert-manager.io_issuers.yaml",
+      "source_repo": "cert-manager/cert-manager",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:10:19.370716",
+      "line_count": 4068,
+      "resources": [
+        {
+          "apiVersion": "apiextensions.k8s.io/v1",
+          "kind": "CustomResourceDefinition",
+          "name": "issuers.cert-manager.io"
+        }
+      ],
+      "complexity_score": 122.6,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/cert-manager_cert-manager_cert-manager.io_issuers_22.yaml"
+    },
+    {
+      "file_name": "01-namespace.yaml",
+      "source_repo": "cert-manager/cert-manager",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:10:22.878307",
+      "line_count": 6,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "cert-manager"
+        }
+      ],
+      "complexity_score": 1.8,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/cert-manager_cert-manager_01-namespace_5.yaml"
+    },
+    {
+      "file_name": "namespace.yaml",
+      "source_repo": "cert-manager/cert-manager",
+      "priority": "medium",
+      "collected_at": "2025-11-05T17:10:25.391809",
+      "line_count": 5,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "cert-manager"
+        }
+      ],
+      "complexity_score": 1.8,
+      "resource_count": 1,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/cert-manager_cert-manager_namespace_6.yaml"
+    },
+    {
+      "file_name": "deploy.yaml",
+      "source_repo": "kubernetes/ingress-nginx",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:10:32.317342",
+      "line_count": 675,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller-admission"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-create"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-patch"
+        },
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "IngressClass",
+          "name": "nginx"
+        },
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingWebhookConfiguration",
+          "name": "ingress-nginx-admission"
+        }
+      ],
+      "complexity_score": 80.9,
+      "resource_count": 19,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_ingress-nginx_deploy_7.yaml"
+    },
+    {
+      "file_name": "deploy.yaml",
+      "source_repo": "kubernetes/ingress-nginx",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:10:36.397118",
+      "line_count": 669,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller-admission"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-create"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-patch"
+        },
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "IngressClass",
+          "name": "nginx"
+        },
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingWebhookConfiguration",
+          "name": "ingress-nginx-admission"
+        }
+      ],
+      "complexity_score": 80.65,
+      "resource_count": 19,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_ingress-nginx_deploy_8.yaml"
+    },
+    {
+      "file_name": "deploy.yaml",
+      "source_repo": "kubernetes/ingress-nginx",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:10:40.539490",
+      "line_count": 671,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller-admission"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-create"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-patch"
+        },
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "IngressClass",
+          "name": "nginx"
+        },
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingWebhookConfiguration",
+          "name": "ingress-nginx-admission"
+        }
+      ],
+      "complexity_score": 80.7,
+      "resource_count": 19,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_ingress-nginx_deploy_9.yaml"
+    },
+    {
+      "file_name": "deploy.yaml",
+      "source_repo": "kubernetes/ingress-nginx",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:10:44.416679",
+      "line_count": 675,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller-admission"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-create"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-patch"
+        },
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "IngressClass",
+          "name": "nginx"
+        },
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingWebhookConfiguration",
+          "name": "ingress-nginx-admission"
+        }
+      ],
+      "complexity_score": 80.9,
+      "resource_count": 19,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_ingress-nginx_deploy_10.yaml"
+    },
+    {
+      "file_name": "deploy.yaml",
+      "source_repo": "kubernetes/ingress-nginx",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:10:47.883782",
+      "line_count": 680,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller-admission"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "DaemonSet",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-create"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-patch"
+        },
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "IngressClass",
+          "name": "nginx"
+        },
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingWebhookConfiguration",
+          "name": "ingress-nginx-admission"
+        }
+      ],
+      "complexity_score": 81.1,
+      "resource_count": 19,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_ingress-nginx_deploy_11.yaml"
+    },
+    {
+      "file_name": "deploy.yaml",
+      "source_repo": "kubernetes/ingress-nginx",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:10:51.524412",
+      "line_count": 680,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller-admission"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-create"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-patch"
+        },
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "IngressClass",
+          "name": "nginx"
+        },
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingWebhookConfiguration",
+          "name": "ingress-nginx-admission"
+        }
+      ],
+      "complexity_score": 81.1,
+      "resource_count": 19,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_ingress-nginx_deploy_12.yaml"
+    },
+    {
+      "file_name": "deploy.yaml",
+      "source_repo": "kubernetes/ingress-nginx",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:10:54.922356",
+      "line_count": 675,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller-admission"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-create"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-patch"
+        },
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "IngressClass",
+          "name": "nginx"
+        },
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingWebhookConfiguration",
+          "name": "ingress-nginx-admission"
+        }
+      ],
+      "complexity_score": 80.9,
+      "resource_count": 19,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_ingress-nginx_deploy_13.yaml"
+    },
+    {
+      "file_name": "deploy.yaml",
+      "source_repo": "kubernetes/ingress-nginx",
+      "priority": "high",
+      "collected_at": "2025-11-05T17:10:58.509830",
+      "line_count": 674,
+      "resources": [
+        {
+          "apiVersion": "v1",
+          "kind": "Namespace",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ServiceAccount",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "Role",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "RoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx"
+        },
+        {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRoleBinding",
+          "name": "ingress-nginx-admission"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "ConfigMap",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Service",
+          "name": "ingress-nginx-controller-admission"
+        },
+        {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "ingress-nginx-controller"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-create"
+        },
+        {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "ingress-nginx-admission-patch"
+        },
+        {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "IngressClass",
+          "name": "nginx"
+        },
+        {
+          "apiVersion": "admissionregistration.k8s.io/v1",
+          "kind": "ValidatingWebhookConfiguration",
+          "name": "ingress-nginx-admission"
+        }
+      ],
+      "complexity_score": 80.85,
+      "resource_count": 19,
+      "file_path": "/content/drive/MyDrive/ravali/thesis-research/data/real_manifests/other/kubernetes_ingress-nginx_deploy_14.yaml"
+    }
+  ]
+}
