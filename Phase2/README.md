@@ -72,59 +72,57 @@ This package contains everything you need to implement Phase 2 of your thesis re
 │                    ENHANCED CODET5 MODEL                      │
 ├───────────────────────────────────────────────────────────────┤
 │                                                               │
-│  USER INPUT: "Deploy nginx with 3 replicas and load balancer"│
+│  USER INPUT: "Deploy nginx with 3 replicas and load balancer" │
 │                            │                                  │
 │                            ▼                                  │
-│              ┌─────────────────────────┐                     │
-│              │   INPUT PREPARATION     │                     │
-│              │  - Intent extraction    │                     │
-│              │  - Pattern generation   │                     │
-│              └─────────┬───────────────┘                     │
+│              ┌─────────────────────────┐                      │
+│              │   INPUT PREPARATION     │                      │
+│              │  - Intent extraction    │                      │
+│              │  - Pattern generation   │                      │
+│              └─────────┬───────────────┘                      │
 │                        │                                      │
-│          ┌─────────────┴─────────────┐                       │
+│          ┌─────────────┴─────────────┐                        │
 │          ▼                           ▼                        │
-│  ┌──────────────────┐      ┌──────────────────┐            │
-│  │ INTENT ENCODER   │      │  K8S PATTERN     │            │
-│  │  (CodeT5-base)   │      │  ENCODER         │            │
-│  │                  │      │  (CodeT5-base)   │            │
-│  │ 60.5M params     │      │  60.5M params    │            │
-│  │                  │      │                  │            │
-│  │ Processes:       │      │ Processes:       │            │
-│  │ - Requirements   │      │ - K8s structure  │            │
-│  │ - Constraints    │      │ - Syntax patterns│            │
-│  │ - User intent    │      │ - Resource types │            │
-│  └─────────┬────────┘      └─────────┬────────┘            │
-│            │                          │                      │
-│            └───────────┬──────────────┘                      │
+│  ┌──────────────────┐      ┌──────────────────┐               │
+│  │ INTENT ENCODER   │      │  K8S PATTERN     │               │
+│  │  (CodeT5-base)   │      │  ENCODER         │               │
+│  │                  │      │  (CodeT5-base)   │               │
+│  │                  │      │                  │               │
+│  │ Processes:       │      │ Processes:       │               │
+│  │ - Requirements   │      │ - K8s structure  │               │
+│  │ - Constraints    │      │ - Syntax patterns│               │
+│  │ - User intent    │      │ - Resource types │               │
+│  └─────────┬────────┘      └─────────┬────────┘               │
+│            │                          │                       │
+│            └───────────┬──────────────┘                       │
 │                        ▼                                      │
-│           ┌────────────────────────┐                         │
-│           │  ATTENTION FUSION      │                         │
-│           │  - Multi-head (8)      │                         │
-│           │  - Cross-attention     │                         │
-│           │  - Semantic alignment  │                         │
-│           └────────────┬───────────┘                         │
+│           ┌────────────────────────┐                          │
+│           │  ATTENTION FUSION      │                          │
+│           │  - Multi-head (8)      │                          │
+│           │  - Cross-attention     │                          │
+│           │  - Semantic alignment  │                          │
+│           └────────────┬───────────┘                          │
 │                        ▼                                      │
-│           ┌────────────────────────┐                         │
-│           │   UNIFIED DECODER      │                         │
-│           │    (CodeT5-base)       │                         │
-│           │   60.5M params         │                         │
-│           │                        │                         │
-│           │  Generates YAML        │                         │
-│           └────────────┬───────────┘                         │
+│           ┌────────────────────────┐                          │
+│           │   UNIFIED DECODER      │                          │
+│           │    (CodeT5-base)       │                          │
+│           │                        │                          │
+│           │  Generates YAML        │                          │
+│           └────────────┬───────────┘                          │
 │                        ▼                                      │
 │                 GENERATED YAML                                │
 │                        │                                      │
 │                        ▼                                      │
-│        ┌───────────────────────────────┐                     │
-│        │    RL REWARD CALCULATOR       │                     │
-│        │                               │                     │
-│        │  R = 0.3×CodeBLEU             │                     │
-│        │    + 0.4×BP%       (KEY!)     │                     │
-│        │    + 0.2×Security             │                     │
-│        │    + 0.1×Complexity           │                     │
-│        │                               │                     │
-│        │  Feedback → Model Update      │                     │
-│        └───────────────────────────────┘                     │
+│        ┌───────────────────────────────┐                      │
+│        │    RL REWARD CALCULATOR       │                      │
+│        │                               │                      │
+│        │  R = 0.3×CodeBLEU             │                      │
+│        │    + 0.4×BP%       (KEY!)     │                      │
+│        │    + 0.2×Security             │                      │
+│        │    + 0.1×Complexity           │                      │
+│        │                               │                      │
+│        │  Feedback → Model Update      │                      │
+│        └───────────────────────────────┘                      │
 │                                                               │
 └───────────────────────────────────────────────────────────────┘
 ```
